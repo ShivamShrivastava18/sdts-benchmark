@@ -1,5 +1,7 @@
 # sdts: a small-data benchmark for tabular synthesis
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22712401.svg)](https://doi.org/10.5281/zenodo.22712401)
+
 Below what training-set size do deep tabular generative models (CTGAN,
 TVAE, TabDDPM) stop beating trivial statistical baselines (independent
 marginals, Gaussian copula, SMOTE), and is the ranking between them
@@ -137,6 +139,28 @@ mismatch.
 Two datasets (cardio, stroke) are Kaggle-hosted with unclear or
 educational-use-only terms; they are used here on that basis and their
 terms are recorded verbatim in the registry.
+
+## Citing this benchmark
+
+Archived on Zenodo. Cite the version DOI for an exact, reproducible
+snapshot; the concept DOI always resolves to the newest version.
+
+| | |
+|---|---|
+| concept DOI (latest version) | [10.5281/zenodo.22712401](https://doi.org/10.5281/zenodo.22712401) |
+| version DOI (v1.0.0) | [10.5281/zenodo.22712402](https://doi.org/10.5281/zenodo.22712402) |
+
+```bibtex
+@software{shrivastava_sdts_2026,
+  author    = {Shrivastava, Shivam},
+  title     = {sdts: a preregistered small-data benchmark for tabular synthesis},
+  year      = {2026},
+  version   = {v1.0.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22712402},
+  url       = {https://doi.org/10.5281/zenodo.22712402}
+}
+```
 
 ## Licence
 

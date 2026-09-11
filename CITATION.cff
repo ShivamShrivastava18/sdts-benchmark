@@ -16,6 +16,9 @@ authors:
     # orcid: "https://orcid.org/0000-0000-0000-0000"   # add yours if you have one
 license: MIT
 repository-code: "https://github.com/ShivamShrivastava18/sdts-benchmark"
+doi: "10.5281/zenodo.22712401"
+version: "v1.0.0"
+date-released: "2026-09-11"
 keywords:
   - synthetic data
   - tabular data
