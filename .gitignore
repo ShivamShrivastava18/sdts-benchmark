@@ -6,8 +6,10 @@ __pycache__/
 build/
 dist/
 
-# run artefacts: logs, manifests, ledgers
-runs/
+# run artefacts: logs, manifests, ledgers. The Stage 0 pilot report is
+# tracked because PREREGISTRATION.md cites it.
+runs/*
+!runs/STAGE0_REPORT.md
 
 # raw and parquet dataset cache, downloaded on demand and checksummed
 data/cache/
