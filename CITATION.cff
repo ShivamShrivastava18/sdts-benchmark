@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+title: "sdts: a preregistered small-data benchmark for tabular synthesis"
+abstract: >-
+  A preregistered benchmark asking below what training-set size deep
+  tabular generative models (CTGAN, TVAE, TabDDPM) stop beating trivial
+  statistical baselines (independent marginals, Gaussian copula, SMOTE),
+  and whether the ranking between them is stable in that regime. Eight
+  public datasets on a size ladder from 200 to 20,000 training rows, four
+  natively small clinical datasets at true size, a 20-trial tuning budget
+  and five evaluation seeds per cell, for 2,220 committed result files.
+type: software
+authors:
+  - family-names: Shrivastava
+    given-names: Shivam
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add yours if you have one
+license: MIT
+repository-code: "https://github.com/ShivamShrivastava18/sdts-benchmark"
+keywords:
+  - synthetic data
+  - tabular data
+  - generative models
+  - benchmark
+  - preregistration
+  - clinical data
+  - reproducibility
