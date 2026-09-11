@@ -1,0 +1,148 @@
+{
+  "dataset": "support2",
+  "target": "hospdead",
+  "task": "binary",
+  "columns": [
+    "age",
+    "sex",
+    "dzgroup",
+    "dzclass",
+    "num.co",
+    "edu",
+    "income",
+    "scoma",
+    "avtisst",
+    "race",
+    "sps",
+    "aps",
+    "surv2m",
+    "surv6m",
+    "hday",
+    "diabetes",
+    "dementia",
+    "ca",
+    "prg2m",
+    "prg6m",
+    "dnr",
+    "dnrday",
+    "meanbp",
+    "wblc",
+    "hrt",
+    "resp",
+    "temp",
+    "pafi",
+    "alb",
+    "bili",
+    "crea",
+    "sod",
+    "ph",
+    "glucose",
+    "bun",
+    "urine",
+    "adlp",
+    "adls",
+    "adlsc",
+    "hospdead"
+  ],
+  "numeric": [
+    "age",
+    "num.co",
+    "edu",
+    "scoma",
+    "avtisst",
+    "sps",
+    "aps",
+    "surv2m",
+    "surv6m",
+    "hday",
+    "prg2m",
+    "prg6m",
+    "dnrday",
+    "meanbp",
+    "wblc",
+    "hrt",
+    "resp",
+    "temp",
+    "pafi",
+    "alb",
+    "bili",
+    "crea",
+    "sod",
+    "ph",
+    "glucose",
+    "bun",
+    "urine",
+    "adlp",
+    "adls",
+    "adlsc"
+  ],
+  "categorical": [
+    "sex",
+    "dzgroup",
+    "dzclass",
+    "income",
+    "race",
+    "diabetes",
+    "dementia",
+    "ca",
+    "dnr"
+  ],
+  "levels": {
+    "sex": [
+      "female",
+      "male"
+    ],
+    "dzgroup": [
+      "ARF/MOSF w/Sepsis",
+      "CHF",
+      "COPD",
+      "Cirrhosis",
+      "Colon Cancer",
+      "Coma",
+      "Lung Cancer",
+      "MOSF w/Malig"
+    ],
+    "dzclass": [
+      "ARF/MOSF",
+      "COPD/CHF/Cirrhosis",
+      "Cancer",
+      "Coma"
+    ],
+    "income": [
+      "$11-$25k",
+      "$25-$50k",
+      ">$50k",
+      "missing",
+      "under $11k"
+    ],
+    "race": [
+      "asian",
+      "black",
+      "hispanic",
+      "missing",
+      "other",
+      "white"
+    ],
+    "diabetes": [
+      "0",
+      "1"
+    ],
+    "dementia": [
+      "0",
+      "1"
+    ],
+    "ca": [
+      "metastatic",
+      "no",
+      "yes"
+    ],
+    "dnr": [
+      "dnr after sadm",
+      "dnr before sadm",
+      "missing",
+      "no dnr"
+    ]
+  },
+  "spec_hash": "abb5bf213697",
+  "n_rows": 9105
+}

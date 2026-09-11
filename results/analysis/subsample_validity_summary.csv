@@ -1,0 +1,5 @@
+small_dataset,matched_rung,n_ladder,tau_mean
+breast_cancer_wisconsin,200,8,0.64285
+heart_cleveland,200,8,0.5714375
+heart_failure,200,8,0.6428375000000001
+pima,500,8,0.6428375

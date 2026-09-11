@@ -1,0 +1,114 @@
+{
+  "dataset": "cdc_diabetes",
+  "target": "Diabetes_binary",
+  "task": "binary",
+  "columns": [
+    "HighBP",
+    "HighChol",
+    "CholCheck",
+    "BMI",
+    "Smoker",
+    "Stroke",
+    "HeartDiseaseorAttack",
+    "PhysActivity",
+    "Fruits",
+    "Veggies",
+    "HvyAlcoholConsump",
+    "AnyHealthcare",
+    "NoDocbcCost",
+    "GenHlth",
+    "MentHlth",
+    "PhysHlth",
+    "DiffWalk",
+    "Sex",
+    "Age",
+    "Education",
+    "Income",
+    "Diabetes_binary"
+  ],
+  "numeric": [
+    "BMI",
+    "GenHlth",
+    "MentHlth",
+    "PhysHlth",
+    "Age",
+    "Education",
+    "Income"
+  ],
+  "categorical": [
+    "HighBP",
+    "HighChol",
+    "CholCheck",
+    "Smoker",
+    "Stroke",
+    "HeartDiseaseorAttack",
+    "PhysActivity",
+    "Fruits",
+    "Veggies",
+    "HvyAlcoholConsump",
+    "AnyHealthcare",
+    "NoDocbcCost",
+    "DiffWalk",
+    "Sex"
+  ],
+  "levels": {
+    "HighBP": [
+      "0",
+      "1"
+    ],
+    "HighChol": [
+      "0",
+      "1"
+    ],
+    "CholCheck": [
+      "0",
+      "1"
+    ],
+    "Smoker": [
+      "0",
+      "1"
+    ],
+    "Stroke": [
+      "0",
+      "1"
+    ],
+    "HeartDiseaseorAttack": [
+      "0",
+      "1"
+    ],
+    "PhysActivity": [
+      "0",
+      "1"
+    ],
+    "Fruits": [
+      "0",
+      "1"
+    ],
+    "Veggies": [
+      "0",
+      "1"
+    ],
+    "HvyAlcoholConsump": [
+      "0",
+      "1"
+    ],
+    "AnyHealthcare": [
+      "0",
+      "1"
+    ],
+    "NoDocbcCost": [
+      "0",
+      "1"
+    ],
+    "DiffWalk": [
+      "0",
+      "1"
+    ],
+    "Sex": [
+      "0",
+      "1"
+    ]
+  },
+  "spec_hash": "57548bdbc4ca",
+  "n_rows": 253680
+}

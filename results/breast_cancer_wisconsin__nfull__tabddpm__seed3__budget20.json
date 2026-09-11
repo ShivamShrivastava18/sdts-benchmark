@@ -1,0 +1,91 @@
+{
+  "cell_id": "breast_cancer_wisconsin__nfull__tabddpm__seed3__budget20",
+  "dataset": "breast_cancer_wisconsin",
+  "n_train": 341,
+  "method": "tabddpm",
+  "seed": 3,
+  "tuning_budget": 20,
+  "hparams": {
+    "steps": 10000,
+    "lr": 0.00083,
+    "weight_decay": 0.0001,
+    "batch_size": 256,
+    "num_timesteps": 1000,
+    "scheduler": "cosine",
+    "gaussian_loss_type": "mse",
+    "d_layers": [
+      512,
+      128
+    ],
+    "dropout": 0.0,
+    "dim_t": 128,
+    "sample_batch_size": 10000,
+    "device": "auto"
+  },
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.9716710758377425,
+    "tstr_acc_mean": 0.9181286549707602,
+    "tstr_f1_mean": 0.8797147188960054,
+    "trtr_auroc_mean": 0.9825286596119929,
+    "trtr_acc_mean": 0.9444444444444443,
+    "trtr_f1_mean": 0.9210905349794238,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.7597365848639194,
+    "ks_mean": 0.17611085386976727,
+    "tvd_mean": 0.05463806142923289,
+    "corr_dist": 8.586573946587754,
+    "dcr_median": 2.293775956289028,
+    "dcr_rate": 0.8181818181818182,
+    "nndr_median": 0.9325949443503271,
+    "mia_auc": 0.5532746823069404
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.9705687830687831,
+      "tstr_acc": 0.9122807017543859,
+      "tstr_f1": 0.868421052631579,
+      "trtr_auroc": 0.9854497354497354,
+      "trtr_acc": 0.956140350877193,
+      "trtr_f1": 0.9382716049382716
+    },
+    "rf": {
+      "tstr_auroc": 0.9728835978835979,
+      "tstr_acc": 0.9385964912280702,
+      "tstr_f1": 0.9135802469135802,
+      "trtr_auroc": 0.9770171957671958,
+      "trtr_acc": 0.9298245614035088,
+      "trtr_f1": 0.9
+    },
+    "xgb": {
+      "tstr_auroc": 0.9715608465608465,
+      "tstr_acc": 0.9035087719298246,
+      "tstr_f1": 0.8571428571428571,
+      "trtr_auroc": 0.9851190476190477,
+      "trtr_acc": 0.9473684210526315,
+      "trtr_f1": 0.925
+    }
+  },
+  "cost": {
+    "fit_seconds": 10.353670791024342,
+    "sample_seconds": 0.5220882089924999,
+    "peak_rss_mb": 471.65625,
+    "eval_seconds": 1.5010902089998126,
+    "total_seconds": 14.247186249995138
+  },
+  "env": {
+    "git_sha": "69e0d81f967323c490e7eb3b8f4cbc55e9cda0a5",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-11T06:18:34.046133+00:00",
+  "finished_at": "2026-09-11T06:18:48.293268+00:00",
+  "error": null
+}

@@ -1,0 +1,98 @@
+{
+  "cell_id": "adult__n2000__ctgan__seed3__budget20",
+  "dataset": "adult",
+  "n_train": 2000,
+  "method": "ctgan",
+  "seed": 3,
+  "tuning_budget": 20,
+  "hparams": {
+    "epochs": 300,
+    "batch_size": 100,
+    "generator_dim": [
+      128,
+      128,
+      128,
+      128
+    ],
+    "discriminator_dim": [
+      256,
+      256
+    ],
+    "generator_lr": 0.00015,
+    "discriminator_lr": 0.00095,
+    "embedding_dim": 32,
+    "pac": 10,
+    "enforce_min_max_values": true,
+    "cuda": false,
+    "verbose": false,
+    "generator_decay": 6e-06,
+    "discriminator_decay": 4e-06,
+    "log_frequency": false
+  },
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.8387079945729555,
+    "tstr_acc_mean": 0.7968166231639285,
+    "tstr_f1_mean": 0.5524352552992498,
+    "trtr_auroc_mean": 0.8975143027382844,
+    "trtr_acc_mean": 0.8422130098776806,
+    "trtr_f1_mean": 0.6386423424305502,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.9730225,
+    "ks_mean": 0.16425,
+    "tvd_mean": 0.0523888888888889,
+    "corr_dist": 1.659805549634566,
+    "dcr_median": 1.9838987595213302,
+    "dcr_rate": 0.5085,
+    "nndr_median": 0.9515914290372232,
+    "mia_auc": 0.51155525
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.846038696064877,
+      "tstr_acc": 0.8040841394134808,
+      "tstr_f1": 0.5668703326544468,
+      "trtr_auroc": 0.8993484451414541,
+      "trtr_acc": 0.8446184553968985,
+      "trtr_f1": 0.6416430594900849
+    },
+    "rf": {
+      "tstr_auroc": 0.8407542276263387,
+      "tstr_acc": 0.7982496545370796,
+      "tstr_f1": 0.544382801664355,
+      "trtr_auroc": 0.8923288830193352,
+      "trtr_acc": 0.8393981268232765,
+      "trtr_f1": 0.6290780141843971
+    },
+    "xgb": {
+      "tstr_auroc": 0.8293310600276511,
+      "tstr_acc": 0.7881160755412252,
+      "tstr_f1": 0.5460526315789473,
+      "trtr_auroc": 0.900865580054064,
+      "trtr_acc": 0.8426224474128666,
+      "trtr_f1": 0.6452059536171686
+    }
+  },
+  "cost": {
+    "fit_seconds": 35.750184374977835,
+    "sample_seconds": 0.03772983298404142,
+    "peak_rss_mb": 519.625,
+    "eval_seconds": 4.893761874991469,
+    "total_seconds": 43.290837208973244
+  },
+  "env": {
+    "git_sha": "d26a57d254753b5572ee411adab9b1fa3b553bfd",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-08T07:19:03.962968+00:00",
+  "finished_at": "2026-09-08T07:19:47.253721+00:00",
+  "error": null
+}

@@ -1,0 +1,148 @@
+{
+  "tuning_budget": 20,
+  "n_rows_used": 424,
+  "crossover": {
+    "adult/ctgan": "none up to 10000",
+    "adult/tvae": "none up to 10000",
+    "adult/tabddpm": "none up to 10000",
+    "bank/ctgan": "none up to 20000",
+    "bank/tvae": "none up to 20000",
+    "bank/tabddpm": "none up to 20000",
+    "credit_default/ctgan": "none up to 10000",
+    "credit_default/tvae": "none up to 10000",
+    "credit_default/tabddpm": "none up to 10000",
+    "diabetes130/ctgan": "none up to 20000",
+    "diabetes130/tvae": 500,
+    "diabetes130/tabddpm": "none up to 20000",
+    "support2/ctgan": "none up to 5000",
+    "support2/tvae": "none up to 5000",
+    "support2/tabddpm": "none up to 5000",
+    "cardio/ctgan": "none up to 20000",
+    "cardio/tvae": "none up to 20000",
+    "cardio/tabddpm": "none up to 20000",
+    "stroke/ctgan": "none up to 2000",
+    "stroke/tvae": "none up to 2000",
+    "stroke/tabddpm": "none up to 2000",
+    "cdc_diabetes/ctgan": "none up to 20000",
+    "cdc_diabetes/tvae": "none up to 20000",
+    "cdc_diabetes/tabddpm": "none up to 20000"
+  },
+  "headline": [
+    {
+      "n_train": 200,
+      "n_datasets": 8,
+      "frac_baseline_wins": 0.625,
+      "frac_baseline_wins_beyond_noise": 0.25
+    },
+    {
+      "n_train": 500,
+      "n_datasets": 8,
+      "frac_baseline_wins": 0.625,
+      "frac_baseline_wins_beyond_noise": 0.5
+    },
+    {
+      "n_train": 1000,
+      "n_datasets": 8,
+      "frac_baseline_wins": 0.625,
+      "frac_baseline_wins_beyond_noise": 0.25
+    },
+    {
+      "n_train": 2000,
+      "n_datasets": 8,
+      "frac_baseline_wins": 1.0,
+      "frac_baseline_wins_beyond_noise": 0.75
+    },
+    {
+      "n_train": 5000,
+      "n_datasets": 7,
+      "frac_baseline_wins": 1.0,
+      "frac_baseline_wins_beyond_noise": 0.5714285714285714
+    },
+    {
+      "n_train": 10000,
+      "n_datasets": 6,
+      "frac_baseline_wins": 1.0,
+      "frac_baseline_wins_beyond_noise": 1.0
+    },
+    {
+      "n_train": 20000,
+      "n_datasets": 4,
+      "frac_baseline_wins": 1.0,
+      "frac_baseline_wins_beyond_noise": 1.0
+    }
+  ],
+  "stability_pairs": [
+    {
+      "n_lo": 200,
+      "n_hi": 500,
+      "n_datasets": 8,
+      "tau_all7_mean": 0.88095,
+      "tau_deep3_mean": 0.9166624999999999
+    },
+    {
+      "n_lo": 500,
+      "n_hi": 1000,
+      "n_datasets": 8,
+      "tau_all7_mean": 0.7619,
+      "tau_deep3_mean": 0.833325
+    },
+    {
+      "n_lo": 1000,
+      "n_hi": 2000,
+      "n_datasets": 8,
+      "tau_all7_mean": 0.809525,
+      "tau_deep3_mean": 0.7499875
+    },
+    {
+      "n_lo": 2000,
+      "n_hi": 5000,
+      "n_datasets": 7,
+      "tau_all7_mean": 0.8639428571428571,
+      "tau_deep3_mean": 0.7142714285714286
+    },
+    {
+      "n_lo": 5000,
+      "n_hi": 10000,
+      "n_datasets": 6,
+      "tau_all7_mean": 0.9206500000000001,
+      "tau_deep3_mean": 0.7777666666666666
+    },
+    {
+      "n_lo": 10000,
+      "n_hi": 20000,
+      "n_datasets": 4,
+      "tau_all7_mean": 0.8809750000000001,
+      "tau_deep3_mean": 0.66665
+    }
+  ],
+  "effect_size": {
+    "n_cells": 53,
+    "fraction_inside_noise": 0.8113207547169812
+  },
+  "subsample_validity": [
+    {
+      "small_dataset": "breast_cancer_wisconsin",
+      "matched_rung": 200,
+      "n_ladder": 8,
+      "tau_mean": 0.64285
+    },
+    {
+      "small_dataset": "heart_cleveland",
+      "matched_rung": 200,
+      "n_ladder": 8,
+      "tau_mean": 0.5714375
+    },
+    {
+      "small_dataset": "heart_failure",
+      "matched_rung": 200,
+      "n_ladder": 8,
+      "tau_mean": 0.6428375000000001
+    },
+    {
+      "small_dataset": "pima",
+      "matched_rung": 500,
+      "n_ladder": 8,
+      "tau_mean": 0.6428375
+    }
+  ]
+}

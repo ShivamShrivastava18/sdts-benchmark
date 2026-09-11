@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdts"
+version = "0.0.1"
+description = "A preregistered small-data benchmark for tabular synthesis: where do deep generators stop beating trivial baselines?"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Shivam Shrivastava" }]
+# Exact pins, not ranges. This study must reproduce in 2028.
+# Resolved on 2026-09-07 for CPython 3.12.7, macOS arm64.
+requires-python = "==3.12.*"
+dependencies = [
+  "pandas==2.3.3",
+  "numpy==2.5.3",
+  "scipy==1.18.1",
+  "scikit-learn==1.9.0",
+  "xgboost==3.4.1",
+  "torch==2.14.0",
+  "sdv==1.38.3",
+  "ctgan==0.12.1",
+  "copulas==0.14.1",
+  "rdt==1.22.0",
+  "optuna==5.0.0",
+  "pyarrow==25.0.1",
+  "pyyaml==6.0.3",
+  "matplotlib==3.11.1",
+  "psutil==7.2.2",
+  "xlrd==2.0.2",
+  "tabulate==0.10.0",
+]
+
+[project.optional-dependencies]
+# Only needed for the two Kaggle-hosted datasets (cardio, stroke) and the
+# CDC fallback; requires ~/.kaggle/kaggle.json.
+kaggle = [
+  "kaggle==2.2.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src", "third_party"]

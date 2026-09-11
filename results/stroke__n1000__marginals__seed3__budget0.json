@@ -1,0 +1,75 @@
+{
+  "cell_id": "stroke__n1000__marginals__seed3__budget0",
+  "dataset": "stroke",
+  "n_train": 1000,
+  "method": "marginals",
+  "seed": 3,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.4471604938271605,
+    "tstr_acc_mean": 0.9481409001956947,
+    "tstr_f1_mean": 0.0,
+    "trtr_auroc_mean": 0.7966152263374485,
+    "trtr_acc_mean": 0.9452054794520549,
+    "trtr_f1_mean": 0.05063058087084599,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.8294029999999999,
+    "ks_mean": 0.03866666666666666,
+    "tvd_mean": 0.019875,
+    "corr_dist": 2.2149757858737793,
+    "dcr_median": 1.2463198156526833,
+    "dcr_rate": 0.496,
+    "nndr_median": 0.899576901104009,
+    "mia_auc": 0.5113390000000001
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.37660493827160496,
+      "tstr_acc": 0.9510763209393346,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.838641975308642,
+      "trtr_acc": 0.952054794520548,
+      "trtr_f1": 0.0392156862745098
+    },
+    "rf": {
+      "tstr_auroc": 0.5108024691358025,
+      "tstr_acc": 0.9500978473581213,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.7695164609053498,
+      "trtr_acc": 0.9452054794520548,
+      "trtr_f1": 0.0
+    },
+    "xgb": {
+      "tstr_auroc": 0.4540740740740741,
+      "tstr_acc": 0.9432485322896281,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.7816872427983539,
+      "trtr_acc": 0.9383561643835616,
+      "trtr_f1": 0.11267605633802817
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.0003973749990109354,
+    "sample_seconds": 0.0030992079991847277,
+    "peak_rss_mb": 387.046875,
+    "eval_seconds": 2.723237792000873,
+    "total_seconds": 4.484589833999053
+  },
+  "env": {
+    "git_sha": "34124b6c504f4c2ae63ae05139778f2cafeff508",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-10T19:35:20.820070+00:00",
+  "finished_at": "2026-09-10T19:35:25.304664+00:00",
+  "error": null
+}

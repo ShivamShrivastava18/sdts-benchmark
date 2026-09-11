@@ -1,0 +1,70 @@
+{
+  "dataset": "stroke",
+  "target": "stroke",
+  "task": "binary",
+  "columns": [
+    "gender",
+    "age",
+    "hypertension",
+    "heart_disease",
+    "ever_married",
+    "work_type",
+    "Residence_type",
+    "avg_glucose_level",
+    "bmi",
+    "smoking_status",
+    "stroke"
+  ],
+  "numeric": [
+    "age",
+    "avg_glucose_level",
+    "bmi"
+  ],
+  "categorical": [
+    "gender",
+    "hypertension",
+    "heart_disease",
+    "ever_married",
+    "work_type",
+    "Residence_type",
+    "smoking_status"
+  ],
+  "levels": {
+    "gender": [
+      "Female",
+      "Male",
+      "Other"
+    ],
+    "hypertension": [
+      "0",
+      "1"
+    ],
+    "heart_disease": [
+      "0",
+      "1"
+    ],
+    "ever_married": [
+      "No",
+      "Yes"
+    ],
+    "work_type": [
+      "Govt_job",
+      "Never_worked",
+      "Private",
+      "Self-employed",
+      "children"
+    ],
+    "Residence_type": [
+      "Rural",
+      "Urban"
+    ],
+    "smoking_status": [
+      "Unknown",
+      "formerly smoked",
+      "never smoked",
+      "smokes"
+    ]
+  },
+  "spec_hash": "5724a9a908f9",
+  "n_rows": 5110
+}

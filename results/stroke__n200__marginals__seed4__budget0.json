@@ -1,0 +1,75 @@
+{
+  "cell_id": "stroke__n200__marginals__seed4__budget0",
+  "dataset": "stroke",
+  "n_train": 200,
+  "method": "marginals",
+  "seed": 4,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.40464334705075444,
+    "tstr_acc_mean": 0.9507501630789301,
+    "tstr_f1_mean": 0.0,
+    "trtr_auroc_mean": 0.74531207133059,
+    "trtr_acc_mean": 0.9357469015003262,
+    "trtr_f1_mean": 0.08814240597186333,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.8244,
+    "ks_mean": 0.12166666666666666,
+    "tvd_mean": 0.03437499999999999,
+    "corr_dist": 2.391055596446465,
+    "dcr_median": 1.5093953226992345,
+    "dcr_rate": 0.565,
+    "nndr_median": 0.8869497461093601,
+    "mia_auc": 0.53975
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.3211111111111111,
+      "tstr_acc": 0.9510763209393346,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.8228189300411523,
+      "trtr_acc": 0.9324853228962818,
+      "trtr_f1": 0.14814814814814814
+    },
+    "rf": {
+      "tstr_auroc": 0.4666769547325103,
+      "tstr_acc": 0.9510763209393346,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.7305349794238682,
+      "trtr_acc": 0.949119373776908,
+      "trtr_f1": 0.0
+    },
+    "xgb": {
+      "tstr_auroc": 0.42614197530864195,
+      "tstr_acc": 0.9500978473581213,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.682582304526749,
+      "trtr_acc": 0.9256360078277887,
+      "trtr_f1": 0.11627906976744186
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.0003470419906079769,
+    "sample_seconds": 0.0022985829855315387,
+    "peak_rss_mb": 385.59375,
+    "eval_seconds": 1.177382875001058,
+    "total_seconds": 2.931830916990293
+  },
+  "env": {
+    "git_sha": "3fa59da30029a43a91e23aa749ff576e6fc610c5",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-10T18:55:28.620000+00:00",
+  "finished_at": "2026-09-10T18:55:31.551823+00:00",
+  "error": null
+}

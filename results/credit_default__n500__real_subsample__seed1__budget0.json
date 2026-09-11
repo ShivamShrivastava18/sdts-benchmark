@@ -1,0 +1,77 @@
+{
+  "cell_id": "credit_default__n500__real_subsample__seed1__budget0",
+  "dataset": "credit_default",
+  "n_train": 500,
+  "method": "real_subsample",
+  "seed": 1,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.7147226395784427,
+    "tstr_acc_mean": 0.7918333333333334,
+    "tstr_f1_mean": 0.4149155640415165,
+    "trtr_auroc_mean": 0.7146473837610738,
+    "trtr_acc_mean": 0.7912777777777777,
+    "trtr_f1_mean": 0.41832611745207,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.525064,
+    "ks_mean": 0.04550000000000001,
+    "tvd_mean": 0.021500000000000005,
+    "corr_dist": 1.7878080991105743,
+    "dcr_median": 0.0,
+    "dcr_rate": 1.0,
+    "nndr_median": 0.0,
+    "mia_auc": 1.0
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.7018252975977859,
+      "tstr_acc": 0.797,
+      "tstr_f1": 0.43506493506493504,
+      "trtr_auroc": 0.7018252975977859,
+      "trtr_acc": 0.797,
+      "trtr_f1": 0.43506493506493504
+    },
+    "rf": {
+      "tstr_auroc": 0.7358371642575937,
+      "tstr_acc": 0.798,
+      "tstr_f1": 0.4,
+      "trtr_auroc": 0.7356113968054873,
+      "trtr_acc": 0.7963333333333333,
+      "trtr_f1": 0.41023166023166024
+    },
+    "xgb": {
+      "tstr_auroc": 0.7065054568799487,
+      "tstr_acc": 0.7805,
+      "tstr_f1": 0.4096817570596145,
+      "trtr_auroc": 0.7065054568799487,
+      "trtr_acc": 0.7805,
+      "trtr_f1": 0.4096817570596145
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.0003843750018859282,
+    "sample_seconds": 0.0031488749955315143,
+    "peak_rss_mb": 425.234375,
+    "eval_seconds": 3.4431377079963568,
+    "total_seconds": 5.2343848750024335
+  },
+  "env": {
+    "git_sha": "b57556a2badb5bc7fd5940606097e08dbf688cb1",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {
+    "with_replacement": false
+  },
+  "started_at": "2026-09-09T03:35:42.944802+00:00",
+  "finished_at": "2026-09-09T03:35:48.179202+00:00",
+  "error": null
+}

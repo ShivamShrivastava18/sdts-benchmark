@@ -1,0 +1,77 @@
+{
+  "cell_id": "credit_default__n1000__ucsmote__seed1__budget20",
+  "dataset": "credit_default",
+  "n_train": 1000,
+  "method": "ucsmote",
+  "seed": 1,
+  "tuning_budget": 20,
+  "hparams": {
+    "k_neighbors": 15
+  },
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.7291531575755221,
+    "tstr_acc_mean": 0.8051111111111111,
+    "tstr_f1_mean": 0.4066788749206611,
+    "trtr_auroc_mean": 0.7252886100911708,
+    "trtr_acc_mean": 0.7993333333333332,
+    "trtr_f1_mean": 0.40363921600532865,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.9587939999999999,
+    "ks_mean": 0.09040000000000001,
+    "tvd_mean": 0.0345,
+    "corr_dist": 2.102428188300428,
+    "dcr_median": 0.6696394040295028,
+    "dcr_rate": 0.893,
+    "nndr_median": 0.62816014272679,
+    "mia_auc": 0.712834
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.7109735560195973,
+      "tstr_acc": 0.8098333333333333,
+      "tstr_f1": 0.43486874690440813,
+      "trtr_auroc": 0.7112984998881645,
+      "trtr_acc": 0.8055,
+      "trtr_f1": 0.38090185676392574
+    },
+    "rf": {
+      "tstr_auroc": 0.7385866892993163,
+      "tstr_acc": 0.807,
+      "tstr_f1": 0.38338658146964855,
+      "trtr_auroc": 0.7487633184654716,
+      "trtr_acc": 0.8088333333333333,
+      "trtr_f1": 0.4162849872773537
+    },
+    "xgb": {
+      "tstr_auroc": 0.7378992274076527,
+      "tstr_acc": 0.7985,
+      "tstr_f1": 0.40178129638792676,
+      "trtr_auroc": 0.7158040119198764,
+      "trtr_acc": 0.7836666666666666,
+      "trtr_f1": 0.4137308039747064
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.02897550000488991,
+    "sample_seconds": 0.03213470800255891,
+    "peak_rss_mb": 430.640625,
+    "eval_seconds": 3.7679925829943386,
+    "total_seconds": 5.649923584001954
+  },
+  "env": {
+    "git_sha": "d08346d2b43d1afb3d2a5c325f1ed032af0366f0",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-09T04:03:11.434830+00:00",
+  "finished_at": "2026-09-09T04:03:17.084776+00:00",
+  "error": null
+}

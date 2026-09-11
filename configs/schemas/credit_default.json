@@ -1,0 +1,81 @@
+{
+  "dataset": "credit_default",
+  "target": "default",
+  "task": "binary",
+  "columns": [
+    "limit_bal",
+    "sex",
+    "education",
+    "marriage",
+    "age",
+    "pay_0",
+    "pay_2",
+    "pay_3",
+    "pay_4",
+    "pay_5",
+    "pay_6",
+    "bill_amt1",
+    "bill_amt2",
+    "bill_amt3",
+    "bill_amt4",
+    "bill_amt5",
+    "bill_amt6",
+    "pay_amt1",
+    "pay_amt2",
+    "pay_amt3",
+    "pay_amt4",
+    "pay_amt5",
+    "pay_amt6",
+    "default"
+  ],
+  "numeric": [
+    "limit_bal",
+    "age",
+    "pay_0",
+    "pay_2",
+    "pay_3",
+    "pay_4",
+    "pay_5",
+    "pay_6",
+    "bill_amt1",
+    "bill_amt2",
+    "bill_amt3",
+    "bill_amt4",
+    "bill_amt5",
+    "bill_amt6",
+    "pay_amt1",
+    "pay_amt2",
+    "pay_amt3",
+    "pay_amt4",
+    "pay_amt5",
+    "pay_amt6"
+  ],
+  "categorical": [
+    "sex",
+    "education",
+    "marriage"
+  ],
+  "levels": {
+    "sex": [
+      "1",
+      "2"
+    ],
+    "education": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "marriage": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "spec_hash": "e3a9f8a2cc6f",
+  "n_rows": 30000
+}

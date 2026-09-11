@@ -1,0 +1,78 @@
+{
+  "cell_id": "breast_cancer_wisconsin__nfull__copula__seed0__budget0",
+  "dataset": "breast_cancer_wisconsin",
+  "n_train": 341,
+  "method": "copula",
+  "seed": 0,
+  "tuning_budget": 0,
+  "hparams": {
+    "default_distribution": "beta",
+    "enforce_min_max_values": true
+  },
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.9576168430335098,
+    "tstr_acc_mean": 0.915204678362573,
+    "tstr_f1_mean": 0.8811784207353828,
+    "trtr_auroc_mean": 0.9835207231040565,
+    "trtr_acc_mean": 0.9444444444444443,
+    "trtr_f1_mean": 0.9210905349794238,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.6767248032103719,
+    "ks_mean": 0.1094450446742467,
+    "tvd_mean": 0.04800123475845036,
+    "corr_dist": 3.4849062851094015,
+    "dcr_median": 2.69933160775928,
+    "dcr_rate": 0.750733137829912,
+    "nndr_median": 0.9422296401101479,
+    "mia_auc": 0.5286309615681433
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.9679232804232804,
+      "tstr_acc": 0.9122807017543859,
+      "tstr_f1": 0.875,
+      "trtr_auroc": 0.9854497354497354,
+      "trtr_acc": 0.956140350877193,
+      "trtr_f1": 0.9382716049382716
+    },
+    "rf": {
+      "tstr_auroc": 0.9611441798941799,
+      "tstr_acc": 0.9385964912280702,
+      "tstr_f1": 0.9113924050632911,
+      "trtr_auroc": 0.9799933862433863,
+      "trtr_acc": 0.9298245614035088,
+      "trtr_f1": 0.9
+    },
+    "xgb": {
+      "tstr_auroc": 0.9437830687830688,
+      "tstr_acc": 0.8947368421052632,
+      "tstr_f1": 0.8571428571428571,
+      "trtr_auroc": 0.9851190476190477,
+      "trtr_acc": 0.9473684210526315,
+      "trtr_f1": 0.925
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.41811929098912515,
+    "sample_seconds": 0.046826250007143244,
+    "peak_rss_mb": 385.21875,
+    "eval_seconds": 1.4508670420036651,
+    "total_seconds": 3.6525756669871043
+  },
+  "env": {
+    "git_sha": "40444df35c9920df9c6661d3dff1154f1fae19b8",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-11T06:03:50.204299+00:00",
+  "finished_at": "2026-09-11T06:03:53.856827+00:00",
+  "error": null
+}

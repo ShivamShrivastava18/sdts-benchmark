@@ -1,0 +1,75 @@
+{
+  "cell_id": "stroke__n1000__marginals__seed2__budget0",
+  "dataset": "stroke",
+  "n_train": 1000,
+  "method": "marginals",
+  "seed": 2,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.43042524005486965,
+    "tstr_acc_mean": 0.9494455316373124,
+    "tstr_f1_mean": 0.0,
+    "trtr_auroc_mean": 0.81670438957476,
+    "trtr_acc_mean": 0.9452054794520549,
+    "trtr_f1_mean": 0.044375644994840036,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.8107200000000001,
+    "ks_mean": 0.04600000000000004,
+    "tvd_mean": 0.011875,
+    "corr_dist": 2.2529484498613597,
+    "dcr_median": 1.270466513094151,
+    "dcr_rate": 0.501,
+    "nndr_median": 0.8997601456060094,
+    "mia_auc": 0.52017
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.3989506172839506,
+      "tstr_acc": 0.9510763209393346,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.825082304526749,
+      "trtr_acc": 0.952054794520548,
+      "trtr_f1": 0.0392156862745098
+    },
+    "rf": {
+      "tstr_auroc": 0.4934156378600823,
+      "tstr_acc": 0.9500978473581213,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.792150205761317,
+      "trtr_acc": 0.9461839530332681,
+      "trtr_f1": 0.03508771929824561
+    },
+    "xgb": {
+      "tstr_auroc": 0.39890946502057617,
+      "tstr_acc": 0.9471624266144814,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.832880658436214,
+      "trtr_acc": 0.9373776908023483,
+      "trtr_f1": 0.058823529411764705
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.0004029999836347997,
+    "sample_seconds": 0.00311241700546816,
+    "peak_rss_mb": 386.890625,
+    "eval_seconds": 2.674278457998298,
+    "total_seconds": 4.433121540991124
+  },
+  "env": {
+    "git_sha": "34124b6c504f4c2ae63ae05139778f2cafeff508",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-10T19:35:16.372382+00:00",
+  "finished_at": "2026-09-10T19:35:20.805509+00:00",
+  "error": null
+}
