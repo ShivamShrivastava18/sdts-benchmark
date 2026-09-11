@@ -1,0 +1,817 @@
+{
+  "study_id": "cdc_diabetes__n10000__tvae__budget20",
+  "dataset": "cdc_diabetes",
+  "n": 10000,
+  "method": "tvae",
+  "tuning_budget": 20,
+  "n_trials": 20,
+  "sampler": "tpe",
+  "tuning_seed": 0,
+  "objective": "tstr_auroc_mean on the validation split",
+  "space_source": "Kindji et al. 2406.12945 Table A.6 (reduced)",
+  "best_trial": 19,
+  "best_value": 0.7972446190471331,
+  "best_hparams": {
+    "epochs": 300,
+    "batch_size": 100,
+    "compress_dims": [
+      512,
+      512
+    ],
+    "decompress_dims": [
+      256,
+      256
+    ],
+    "embedding_dim": 16,
+    "l2scale": 5.8e-05,
+    "loss_factor": 3,
+    "enforce_min_max_values": true,
+    "cuda": false,
+    "verbose": false
+  },
+  "n_ok": 20,
+  "n_failed": 0,
+  "trials": [
+    {
+      "number": 0,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 256,
+        "decoder_depth": 4,
+        "embedding_dim": 64,
+        "loss_factor": 2,
+        "l2scale": 2.647080542585008e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "embedding_dim": 64,
+        "l2scale": 2.6e-05,
+        "loss_factor": 2,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7231226754443467,
+      "per_classifier": {
+        "lr": 0.7656203889139344,
+        "rf": 0.6956411371581558,
+        "xgb": 0.7081065002609498
+      },
+      "seconds": 64.76275033300044,
+      "error": null
+    },
+    {
+      "number": 1,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 512,
+        "decoder_depth": 4,
+        "embedding_dim": 64,
+        "loss_factor": 3,
+        "l2scale": 4.206381131295402e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          512,
+          512,
+          512,
+          512
+        ],
+        "embedding_dim": 64,
+        "l2scale": 4.2e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7625462389387887,
+      "per_classifier": {
+        "lr": 0.7849471055850894,
+        "rf": 0.7449880989668128,
+        "xgb": 0.7577035122644639
+      },
+      "seconds": 90.86853433400393,
+      "error": null
+    },
+    {
+      "number": 2,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 512,
+        "decoder_depth": 2,
+        "embedding_dim": 32,
+        "loss_factor": 3,
+        "l2scale": 3.1167437523977736e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          512,
+          512
+        ],
+        "embedding_dim": 32,
+        "l2scale": 3.1e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7796108581073193,
+      "per_classifier": {
+        "lr": 0.7868347632929695,
+        "rf": 0.7645217437881052,
+        "xgb": 0.7874760672408836
+      },
+      "seconds": 65.01578820901341,
+      "error": null
+    },
+    {
+      "number": 3,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 256,
+        "decoder_depth": 4,
+        "embedding_dim": 16,
+        "loss_factor": 3,
+        "l2scale": 1.2678153848666403e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "embedding_dim": 16,
+        "l2scale": 1.3e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7577151585533052,
+      "per_classifier": {
+        "lr": 0.7538263169280836,
+        "rf": 0.766443004035904,
+        "xgb": 0.752876154695928
+      },
+      "seconds": 61.881357583013596,
+      "error": null
+    },
+    {
+      "number": 4,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 256,
+        "decoder_depth": 2,
+        "embedding_dim": 64,
+        "loss_factor": 2,
+        "l2scale": 1.5681199751286297e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          256,
+          256
+        ],
+        "embedding_dim": 64,
+        "l2scale": 1.6e-05,
+        "loss_factor": 2,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.763338940862131,
+      "per_classifier": {
+        "lr": 0.779155112962312,
+        "rf": 0.7460412587745676,
+        "xgb": 0.7648204508495138
+      },
+      "seconds": 58.187251708004624,
+      "error": null
+    },
+    {
+      "number": 5,
+      "params": {
+        "encoder_dim": 256,
+        "decoder_dim": 256,
+        "decoder_depth": 4,
+        "embedding_dim": 64,
+        "loss_factor": 2,
+        "l2scale": 2.3692555630429673e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          256,
+          256
+        ],
+        "decompress_dims": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "embedding_dim": 64,
+        "l2scale": 2.4e-05,
+        "loss_factor": 2,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7210204808935915,
+      "per_classifier": {
+        "lr": 0.7516136743084647,
+        "rf": 0.6787077101668471,
+        "xgb": 0.7327400582054627
+      },
+      "seconds": 54.45545462498558,
+      "error": null
+    },
+    {
+      "number": 6,
+      "params": {
+        "encoder_dim": 256,
+        "decoder_dim": 256,
+        "decoder_depth": 2,
+        "embedding_dim": 64,
+        "loss_factor": 3,
+        "l2scale": 3.5770173312064554e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          256,
+          256
+        ],
+        "decompress_dims": [
+          256,
+          256
+        ],
+        "embedding_dim": 64,
+        "l2scale": 3.6e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7788358702055027,
+      "per_classifier": {
+        "lr": 0.7979401945930619,
+        "rf": 0.7715854074858127,
+        "xgb": 0.7669820085376335
+      },
+      "seconds": 48.131918250001036,
+      "error": null
+    },
+    {
+      "number": 7,
+      "params": {
+        "encoder_dim": 256,
+        "decoder_dim": 256,
+        "decoder_depth": 4,
+        "embedding_dim": 32,
+        "loss_factor": 3,
+        "l2scale": 1.4009811242144674e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          256,
+          256
+        ],
+        "decompress_dims": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "embedding_dim": 32,
+        "l2scale": 1.4e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7772359886773624,
+      "per_classifier": {
+        "lr": 0.790749367675357,
+        "rf": 0.7655819901763441,
+        "xgb": 0.7753766081803863
+      },
+      "seconds": 53.04022804199485,
+      "error": null
+    },
+    {
+      "number": 8,
+      "params": {
+        "encoder_dim": 256,
+        "decoder_dim": 256,
+        "decoder_depth": 2,
+        "embedding_dim": 32,
+        "loss_factor": 2,
+        "l2scale": 2.8669766297825158e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          256,
+          256
+        ],
+        "decompress_dims": [
+          256,
+          256
+        ],
+        "embedding_dim": 32,
+        "l2scale": 2.9e-05,
+        "loss_factor": 2,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.786621315488787,
+      "per_classifier": {
+        "lr": 0.8096451489823234,
+        "rf": 0.756039519994982,
+        "xgb": 0.7941792774890555
+      },
+      "seconds": 45.79239666700596,
+      "error": null
+    },
+    {
+      "number": 9,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 512,
+        "decoder_depth": 2,
+        "embedding_dim": 64,
+        "loss_factor": 2,
+        "l2scale": 3.577408888622284e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          512,
+          512
+        ],
+        "embedding_dim": 64,
+        "l2scale": 3.6e-05,
+        "loss_factor": 2,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7714268446400586,
+      "per_classifier": {
+        "lr": 0.7775407591520158,
+        "rf": 0.7619430157097292,
+        "xgb": 0.7747967590584308
+      },
+      "seconds": 67.57235166599276,
+      "error": null
+    },
+    {
+      "number": 10,
+      "params": {
+        "encoder_dim": 256,
+        "decoder_dim": 256,
+        "decoder_depth": 2,
+        "embedding_dim": 32,
+        "loss_factor": 2,
+        "l2scale": 3.158124138568158e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          256,
+          256
+        ],
+        "decompress_dims": [
+          256,
+          256
+        ],
+        "embedding_dim": 32,
+        "l2scale": 3.2e-05,
+        "loss_factor": 2,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.776169419169577,
+      "per_classifier": {
+        "lr": 0.804306464260797,
+        "rf": 0.7603549672861902,
+        "xgb": 0.7638468259617439
+      },
+      "seconds": 45.686532584019005,
+      "error": null
+    },
+    {
+      "number": 11,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 512,
+        "decoder_depth": 2,
+        "embedding_dim": 32,
+        "loss_factor": 3,
+        "l2scale": 3.208718416702929e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          512,
+          512
+        ],
+        "embedding_dim": 32,
+        "l2scale": 3.2e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7915107547419437,
+      "per_classifier": {
+        "lr": 0.8114601040437006,
+        "rf": 0.7715449305578771,
+        "xgb": 0.7915272296242533
+      },
+      "seconds": 64.8115087079932,
+      "error": null
+    },
+    {
+      "number": 12,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 512,
+        "decoder_depth": 2,
+        "embedding_dim": 16,
+        "loss_factor": 3,
+        "l2scale": 1.976957814792609e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          512,
+          512
+        ],
+        "embedding_dim": 16,
+        "l2scale": 2e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.791176229268136,
+      "per_classifier": {
+        "lr": 0.8010340255545106,
+        "rf": 0.7731184203104694,
+        "xgb": 0.7993762419394278
+      },
+      "seconds": 63.54885979098617,
+      "error": null
+    },
+    {
+      "number": 13,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 512,
+        "decoder_depth": 2,
+        "embedding_dim": 16,
+        "loss_factor": 3,
+        "l2scale": 1.8459237016421986e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          512,
+          512
+        ],
+        "embedding_dim": 16,
+        "l2scale": 1.8e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7592189633278386,
+      "per_classifier": {
+        "lr": 0.7945461226292404,
+        "rf": 0.7475322753084329,
+        "xgb": 0.7355784920458422
+      },
+      "seconds": 63.895051416009665,
+      "error": null
+    },
+    {
+      "number": 14,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 512,
+        "decoder_depth": 2,
+        "embedding_dim": 32,
+        "loss_factor": 3,
+        "l2scale": 5.37570314619173e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          512,
+          512
+        ],
+        "embedding_dim": 32,
+        "l2scale": 5.4e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7673814352102174,
+      "per_classifier": {
+        "lr": 0.7827884861957122,
+        "rf": 0.7639399735954172,
+        "xgb": 0.7554158458395226
+      },
+      "seconds": 64.76136524998583,
+      "error": null
+    },
+    {
+      "number": 15,
+      "params": {
+        "encoder_dim": 256,
+        "decoder_dim": 512,
+        "decoder_depth": 4,
+        "embedding_dim": 16,
+        "loss_factor": 3,
+        "l2scale": 3.042104182901779e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          256,
+          256
+        ],
+        "decompress_dims": [
+          512,
+          512,
+          512,
+          512
+        ],
+        "embedding_dim": 16,
+        "l2scale": 3e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7469404338025435,
+      "per_classifier": {
+        "lr": 0.7647228406948727,
+        "rf": 0.7140119883171818,
+        "xgb": 0.7620864723955758
+      },
+      "seconds": 76.49918162499671,
+      "error": null
+    },
+    {
+      "number": 16,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 512,
+        "decoder_depth": 4,
+        "embedding_dim": 32,
+        "loss_factor": 3,
+        "l2scale": 2.1999488679769333e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          512,
+          512,
+          512,
+          512
+        ],
+        "embedding_dim": 32,
+        "l2scale": 2.2e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7783719202851018,
+      "per_classifier": {
+        "lr": 0.7966924866888021,
+        "rf": 0.7606570645677023,
+        "xgb": 0.7777662095988013
+      },
+      "seconds": 87.84574033302488,
+      "error": null
+    },
+    {
+      "number": 17,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 256,
+        "decoder_depth": 2,
+        "embedding_dim": 16,
+        "loss_factor": 3,
+        "l2scale": 4.514699352596394e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          256,
+          256
+        ],
+        "embedding_dim": 16,
+        "l2scale": 4.5e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7953968270664945,
+      "per_classifier": {
+        "lr": 0.8119279155430441,
+        "rf": 0.7874726203281364,
+        "xgb": 0.786789945328303
+      },
+      "seconds": 54.84565262499382,
+      "error": null
+    },
+    {
+      "number": 18,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 256,
+        "decoder_depth": 2,
+        "embedding_dim": 16,
+        "loss_factor": 3,
+        "l2scale": 6.162763052424475e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          256,
+          256
+        ],
+        "embedding_dim": 16,
+        "l2scale": 6.2e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7960585155294256,
+      "per_classifier": {
+        "lr": 0.8033185123320252,
+        "rf": 0.790416555939184,
+        "xgb": 0.7944404783170674
+      },
+      "seconds": 54.661118290998274,
+      "error": null
+    },
+    {
+      "number": 19,
+      "params": {
+        "encoder_dim": 512,
+        "decoder_dim": 256,
+        "decoder_depth": 2,
+        "embedding_dim": 16,
+        "loss_factor": 3,
+        "l2scale": 5.8280746522904614e-05
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "compress_dims": [
+          512,
+          512
+        ],
+        "decompress_dims": [
+          256,
+          256
+        ],
+        "embedding_dim": 16,
+        "l2scale": 5.8e-05,
+        "loss_factor": 3,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false
+      },
+      "status": "ok",
+      "value": 0.7972446190471331,
+      "per_classifier": {
+        "lr": 0.806955996592001,
+        "rf": 0.7893303831950073,
+        "xgb": 0.7954474773543907
+      },
+      "seconds": 54.66141025000252,
+      "error": null
+    }
+  ],
+  "env": {
+    "git_sha": "e2489d2d84d7917ba25464578670f31da346ec61",
+    "code_sha": "12343a9a8f341a19"
+  },
+  "started_at": "2026-09-11T01:37:15.210833+00:00",
+  "finished_at": "2026-09-11T01:57:56.189993+00:00",
+  "total_seconds": 1240.9772389169957
+}

@@ -1,0 +1,792 @@
+{
+  "study_id": "support2__n5000__tabddpm__budget20",
+  "dataset": "support2",
+  "n": 5000,
+  "method": "tabddpm",
+  "tuning_budget": 20,
+  "n_trials": 20,
+  "sampler": "tpe",
+  "tuning_seed": 0,
+  "objective": "tstr_auroc_mean on the validation split",
+  "space_source": "Kindji et al. 2406.12945 Table A.9 (reduced, adapted)",
+  "best_trial": 19,
+  "best_value": 0.9239251297257228,
+  "best_hparams": {
+    "steps": 10000,
+    "lr": 0.00076,
+    "weight_decay": 0.0001,
+    "batch_size": 1024,
+    "num_timesteps": 1000,
+    "scheduler": "cosine",
+    "gaussian_loss_type": "mse",
+    "d_layers": [
+      256,
+      512
+    ],
+    "dropout": 0.0,
+    "dim_t": 128,
+    "sample_batch_size": 10000,
+    "device": "auto"
+  },
+  "n_ok": 20,
+  "n_failed": 0,
+  "trials": [
+    {
+      "number": 0,
+      "params": {
+        "n_layers": 4,
+        "first_dim": 128,
+        "middle_dim": 512,
+        "last_dim": 128,
+        "batch_size": 1024,
+        "lr": 0.0008561685378689606
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00086,
+        "weight_decay": 0.0001,
+        "batch_size": 1024,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          128,
+          512,
+          512,
+          128
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.6404249538264377,
+      "per_classifier": {
+        "lr": 0.7436676257365783,
+        "rf": 0.6223151801083037,
+        "xgb": 0.5552920556344311
+      },
+      "seconds": 117.7920052500267,
+      "error": null
+    },
+    {
+      "number": 1,
+      "params": {
+        "n_layers": 4,
+        "first_dim": 256,
+        "middle_dim": 256,
+        "last_dim": 256,
+        "batch_size": 256,
+        "lr": 0.0008720959652186894
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00087,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.23737529997110227,
+      "per_classifier": {
+        "lr": 0.2249092234046563,
+        "rf": 0.1809917264514832,
+        "xgb": 0.30622495005716727
+      },
+      "seconds": 50.066706249985145,
+      "error": null
+    },
+    {
+      "number": 2,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 512,
+        "batch_size": 256,
+        "lr": 0.0005339480455392825
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00053,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.8658644926352644,
+      "per_classifier": {
+        "lr": 0.8097554999937179,
+        "rf": 0.882178104308276,
+        "xgb": 0.9056598736037994
+      },
+      "seconds": 47.97916879100376,
+      "error": null
+    },
+    {
+      "number": 3,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 512,
+        "batch_size": 1024,
+        "lr": 0.00040904664995688577
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00041,
+        "weight_decay": 0.0001,
+        "batch_size": 1024,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.8618821537611038,
+      "per_classifier": {
+        "lr": 0.8498087095274592,
+        "rf": 0.8490603523011396,
+        "xgb": 0.8867773994547122
+      },
+      "seconds": 105.77977758299676,
+      "error": null
+    },
+    {
+      "number": 4,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 128,
+        "middle_dim": 256,
+        "last_dim": 512,
+        "batch_size": 1024,
+        "lr": 0.00038406297992196016
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00038,
+        "weight_decay": 0.0001,
+        "batch_size": 1024,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          128,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.44723937589258417,
+      "per_classifier": {
+        "lr": 0.46171991808119006,
+        "rf": 0.3836072859996733,
+        "xgb": 0.49639092359688913
+      },
+      "seconds": 101.87570725000114,
+      "error": null
+    },
+    {
+      "number": 5,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 128,
+        "middle_dim": 256,
+        "last_dim": 512,
+        "batch_size": 256,
+        "lr": 0.0006834587249369918
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00068,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          128,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.25602114770095447,
+      "per_classifier": {
+        "lr": 0.22869105803419984,
+        "rf": 0.14693479790428565,
+        "xgb": 0.3924375871643779
+      },
+      "seconds": 46.43659125000704,
+      "error": null
+    },
+    {
+      "number": 6,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 512,
+        "middle_dim": 128,
+        "last_dim": 256,
+        "batch_size": 1024,
+        "lr": 0.0003568679772606105
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00036,
+        "weight_decay": 0.0001,
+        "batch_size": 1024,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          512,
+          256
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.6416138445301603,
+      "per_classifier": {
+        "lr": 0.4280226407508386,
+        "rf": 0.7777112047844604,
+        "xgb": 0.7191076880551821
+      },
+      "seconds": 106.31739408298745,
+      "error": null
+    },
+    {
+      "number": 7,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 512,
+        "middle_dim": 128,
+        "last_dim": 128,
+        "batch_size": 256,
+        "lr": 0.0007930900634640835
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00079,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          512,
+          128
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.34108101627906,
+      "per_classifier": {
+        "lr": 0.36225515447726503,
+        "rf": 0.28135640336218914,
+        "xgb": 0.37963149099772586
+      },
+      "seconds": 46.947117291012546,
+      "error": null
+    },
+    {
+      "number": 8,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 512,
+        "middle_dim": 256,
+        "last_dim": 512,
+        "batch_size": 256,
+        "lr": 0.0006289024297143436
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00063,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          512,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.771577764236325,
+      "per_classifier": {
+        "lr": 0.7708801874583809,
+        "rf": 0.8132035971403802,
+        "xgb": 0.7306495081102136
+      },
+      "seconds": 52.010117249999894,
+      "error": null
+    },
+    {
+      "number": 9,
+      "params": {
+        "n_layers": 4,
+        "first_dim": 128,
+        "middle_dim": 128,
+        "last_dim": 256,
+        "batch_size": 256,
+        "lr": 0.0005310591505369418
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00053,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          128,
+          128,
+          128,
+          256
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.15598444966558198,
+      "per_classifier": {
+        "lr": 0.1480271010541393,
+        "rf": 0.12770916309633001,
+        "xgb": 0.1922170848462766
+      },
+      "seconds": 46.60769145900849,
+      "error": null
+    },
+    {
+      "number": 10,
+      "params": {
+        "n_layers": 4,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 512,
+        "batch_size": 256,
+        "lr": 0.0003878841548014926
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00039,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          512,
+          512,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.42364976358298473,
+      "per_classifier": {
+        "lr": 0.509867635787966,
+        "rf": 0.3551265218429219,
+        "xgb": 0.4059551331180661
+      },
+      "seconds": 62.02355425001588,
+      "error": null
+    },
+    {
+      "number": 11,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 512,
+        "batch_size": 1024,
+        "lr": 0.0004984590735020733
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.0005,
+        "weight_decay": 0.0001,
+        "batch_size": 1024,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.9123267706147681,
+      "per_classifier": {
+        "lr": 0.8877982435199959,
+        "rf": 0.9260516264401755,
+        "xgb": 0.9231304418841326
+      },
+      "seconds": 106.27750112497597,
+      "error": null
+    },
+    {
+      "number": 12,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 256,
+        "batch_size": 256,
+        "lr": 0.0007169299355099684
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00072,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          256
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.7554306286724212,
+      "per_classifier": {
+        "lr": 0.7738830395396464,
+        "rf": 0.7865462175371587,
+        "xgb": 0.7058626289404581
+      },
+      "seconds": 45.85328470901004,
+      "error": null
+    },
+    {
+      "number": 13,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 128,
+        "batch_size": 256,
+        "lr": 0.0005153688396057757
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00052,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          128
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.24498974967856502,
+      "per_classifier": {
+        "lr": 0.1893759972861253,
+        "rf": 0.3196474789863176,
+        "xgb": 0.22594577276325212
+      },
+      "seconds": 44.91086695800186,
+      "error": null
+    },
+    {
+      "number": 14,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 256,
+        "middle_dim": 128,
+        "last_dim": 512,
+        "batch_size": 256,
+        "lr": 0.0005610001824404721
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00056,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.7413728206287981,
+      "per_classifier": {
+        "lr": 0.5997176188262492,
+        "rf": 0.8198265193300752,
+        "xgb": 0.80457432373007
+      },
+      "seconds": 48.077493124990724,
+      "error": null
+    },
+    {
+      "number": 15,
+      "params": {
+        "n_layers": 4,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 512,
+        "batch_size": 256,
+        "lr": 0.0005431427960829912
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00054,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          512,
+          512,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.1960735196190524,
+      "per_classifier": {
+        "lr": 0.17408061212951215,
+        "rf": 0.1351738890075511,
+        "xgb": 0.278966057720094
+      },
+      "seconds": 61.9478422079992,
+      "error": null
+    },
+    {
+      "number": 16,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 512,
+        "middle_dim": 512,
+        "last_dim": 512,
+        "batch_size": 256,
+        "lr": 0.00041055489955655635
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00041,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          512,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.7539697746395113,
+      "per_classifier": {
+        "lr": 0.7615857948763052,
+        "rf": 0.7573170961540879,
+        "xgb": 0.7430064328881407
+      },
+      "seconds": 51.96412912500091,
+      "error": null
+    },
+    {
+      "number": 17,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 512,
+        "batch_size": 1024,
+        "lr": 0.0004910417115190639
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00049,
+        "weight_decay": 0.0001,
+        "batch_size": 1024,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.8619826676383008,
+      "per_classifier": {
+        "lr": 0.8425622871932756,
+        "rf": 0.8731130090085562,
+        "xgb": 0.8702727067130707
+      },
+      "seconds": 106.61501812501228,
+      "error": null
+    },
+    {
+      "number": 18,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 256,
+        "batch_size": 256,
+        "lr": 0.0004236088620333212
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00042,
+        "weight_decay": 0.0001,
+        "batch_size": 256,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          256
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.5941150171920611,
+      "per_classifier": {
+        "lr": 0.6313684964380395,
+        "rf": 0.6158595192923823,
+        "xgb": 0.5351170358457614
+      },
+      "seconds": 45.87022466698545,
+      "error": null
+    },
+    {
+      "number": 19,
+      "params": {
+        "n_layers": 2,
+        "first_dim": 256,
+        "middle_dim": 512,
+        "last_dim": 512,
+        "batch_size": 1024,
+        "lr": 0.0007551379047584333
+      },
+      "hparams": {
+        "steps": 10000,
+        "lr": 0.00076,
+        "weight_decay": 0.0001,
+        "batch_size": 1024,
+        "num_timesteps": 1000,
+        "scheduler": "cosine",
+        "gaussian_loss_type": "mse",
+        "d_layers": [
+          256,
+          512
+        ],
+        "dropout": 0.0,
+        "dim_t": 128,
+        "sample_batch_size": 10000,
+        "device": "auto"
+      },
+      "status": "ok",
+      "value": 0.9239251297257228,
+      "per_classifier": {
+        "lr": 0.9192512344360544,
+        "rf": 0.9324342576421958,
+        "xgb": 0.9200898970989182
+      },
+      "seconds": 105.7372567919956,
+      "error": null
+    }
+  ],
+  "env": {
+    "git_sha": "ec7e5e4744a505d9ee82a7975bfad933979b4baa",
+    "code_sha": "12343a9a8f341a19"
+  },
+  "started_at": "2026-09-10T11:55:16.655691+00:00",
+  "finished_at": "2026-09-10T12:18:37.808534+00:00",
+  "total_seconds": 1401.1353689589887
+}

@@ -1,0 +1,75 @@
+{
+  "cell_id": "diabetes130__n1000__marginals__seed4__budget0",
+  "dataset": "diabetes130",
+  "n_train": 1000,
+  "method": "marginals",
+  "seed": 4,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.5005924991648677,
+    "tstr_acc_mean": 0.5591442953020135,
+    "tstr_f1_mean": 0.2826766113004106,
+    "trtr_auroc_mean": 0.6037096380899101,
+    "trtr_acc_mean": 0.603141312453393,
+    "trtr_f1_mean": 0.40635682391531885,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.915378,
+    "ks_mean": 0.029500000000000005,
+    "tvd_mean": 0.020999999999999998,
+    "corr_dist": 3.205480358996453,
+    "dcr_median": 3.4568477562415794,
+    "dcr_rate": 0.454,
+    "nndr_median": 0.968415116007348,
+    "mia_auc": 0.4942365
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.5053371293717625,
+      "tstr_acc": 0.5518036912751678,
+      "tstr_f1": 0.33378364335446326,
+      "trtr_auroc": 0.6075562746479894,
+      "trtr_acc": 0.6043763982102909,
+      "trtr_f1": 0.42190213504954543
+    },
+    "rf": {
+      "tstr_auroc": 0.49748620546215616,
+      "tstr_acc": 0.5803271812080537,
+      "tstr_f1": 0.1855921855921856,
+      "trtr_auroc": 0.6046457867024612,
+      "trtr_acc": 0.6112276286353467,
+      "trtr_f1": 0.3614651509932254
+    },
+    "xgb": {
+      "tstr_auroc": 0.49895416266068426,
+      "tstr_acc": 0.5453020134228188,
+      "tstr_f1": 0.32865400495458297,
+      "trtr_auroc": 0.5989268529192796,
+      "trtr_acc": 0.5938199105145414,
+      "trtr_f1": 0.4357031857031857
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.001002917008008808,
+    "sample_seconds": 0.012520125004812144,
+    "peak_rss_mb": 443.96875,
+    "eval_seconds": 5.915038833991275,
+    "total_seconds": 8.014004833006766
+  },
+  "env": {
+    "git_sha": "a8c3c577d0c5174e277ea9d23b3305c58c3005b8",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-09T10:43:02.100769+00:00",
+  "finished_at": "2026-09-09T10:43:10.114810+00:00",
+  "error": null
+}

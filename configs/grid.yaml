@@ -1,0 +1,46 @@
+# Grid definitions for sdts.runner.run_grid. Frozen at Phase 6.
+
+budget:
+  max_cell_seconds: 3600          # per-cell timeout for fit + sample (worker) and evaluation
+  stage1_wall_clock_hours: 120    # Stage 1 budget; projection compared against this in Phase 8
+
+ladder: [200, 500, 1000, 2000, 5000, 10000, 20000]
+seeds: [0, 1, 2, 3, 4]
+
+# methods that run; tabsyn is registered but disabled (stub)
+methods_active: [marginals, real_subsample, copula, smote, ucsmote, ctgan, tvae, tabddpm]
+methods_disabled: [tabsyn]
+
+# n: "full" means the whole training split (natively small datasets, never subsampled);
+# integers are ladder rungs and are capped at the training split size per dataset.
+grids:
+  smoke:
+    datasets: [pima]
+    n: [200]
+    methods: [ctgan]
+    seeds: [0]
+    tuning_budget: 0
+    results_dir: runs/smoke
+  stage0:
+    description: pilot grid used to set the hypothesis before the protocol was frozen
+    datasets: [pima, adult]
+    n: {pima: [full], adult: [200, 1000, 5000]}
+    methods: all_active
+    seeds: all
+    tuning_budget: 0
+  stage1:
+    description: full ladder grid, the study's main experiment
+    full: true                    # requires --confirm-full
+    datasets: [adult, bank, credit_default, diabetes130, support2, cardio, stroke, cdc_diabetes]
+    n: ladder
+    methods: all_active
+    seeds: all
+    tuning_budget: 20
+  stage2:
+    description: natively small clinical arm, run at true size and never subsampled
+    full: true
+    datasets: [pima, breast_cancer_wisconsin, heart_cleveland, heart_failure]
+    n: [full]
+    methods: all_active
+    seeds: all
+    tuning_budget: 20

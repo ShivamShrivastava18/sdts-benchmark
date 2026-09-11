@@ -1,0 +1,977 @@
+{
+  "study_id": "cdc_diabetes__n2000__ctgan__budget20",
+  "dataset": "cdc_diabetes",
+  "n": 2000,
+  "method": "ctgan",
+  "tuning_budget": 20,
+  "n_trials": 20,
+  "sampler": "tpe",
+  "tuning_seed": 0,
+  "objective": "tstr_auroc_mean on the validation split",
+  "space_source": "Kindji et al. 2406.12945 Table A.7 (reduced)",
+  "best_trial": 19,
+  "best_value": 0.769083385634457,
+  "best_hparams": {
+    "epochs": 300,
+    "batch_size": 100,
+    "generator_dim": [
+      128,
+      128,
+      128
+    ],
+    "discriminator_dim": [
+      256,
+      256
+    ],
+    "generator_lr": 0.00025,
+    "discriminator_lr": 0.00095,
+    "embedding_dim": 128,
+    "pac": 10,
+    "enforce_min_max_values": true,
+    "cuda": false,
+    "verbose": false,
+    "generator_decay": 3.5e-06,
+    "discriminator_decay": 5e-06,
+    "log_frequency": true
+  },
+  "n_ok": 20,
+  "n_failed": 0,
+  "trials": [
+    {
+      "number": 0,
+      "params": {
+        "generator_depth": 4,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0008075305039393335,
+        "generator_lr": 0.0004101030129095763,
+        "batch_size": 1000,
+        "embedding_dim": 128,
+        "generator_decay": 2.6692207520552474e-06,
+        "discriminator_decay": 3.2583321624863047e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 1000,
+        "generator_dim": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.0004,
+        "discriminator_lr": 0.0008,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 2.7e-06,
+        "discriminator_decay": 3e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.44172098148607336,
+      "per_classifier": {
+        "lr": 0.38382616308044604,
+        "rf": 0.4985392978327086,
+        "xgb": 0.4427974835450654
+      },
+      "seconds": 18.204240000020945,
+      "error": null
+    },
+    {
+      "number": 1,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0016928065624109714,
+        "generator_lr": 0.0012125199039442608,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 1.3048739151057062e-06,
+        "discriminator_decay": 7.13051733463681e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.0012,
+        "discriminator_lr": 0.0017,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 1.3e-06,
+        "discriminator_decay": 7e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.6174933868219897,
+      "per_classifier": {
+        "lr": 0.6732447567897403,
+        "rf": 0.6232920891541519,
+        "xgb": 0.555943314522077
+      },
+      "seconds": 31.537945999996737,
+      "error": null
+    },
+    {
+      "number": 2,
+      "params": {
+        "generator_depth": 4,
+        "discriminator_depth": 3,
+        "discriminator_lr": 0.0004126593035907186,
+        "generator_lr": 0.00037403114906266687,
+        "batch_size": 1000,
+        "embedding_dim": 32,
+        "generator_decay": 2.250745596539848e-06,
+        "discriminator_decay": 4.266028452325989e-06,
+        "log_frequency": true
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 1000,
+        "generator_dim": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256,
+          256
+        ],
+        "generator_lr": 0.00035,
+        "discriminator_lr": 0.0004,
+        "embedding_dim": 32,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 2.3e-06,
+        "discriminator_decay": 4e-06,
+        "log_frequency": true
+      },
+      "status": "ok",
+      "value": 0.5708557891410907,
+      "per_classifier": {
+        "lr": 0.6208462113778488,
+        "rf": 0.5785902974336798,
+        "xgb": 0.5131308586117437
+      },
+      "seconds": 17.142223375005415,
+      "error": null
+    },
+    {
+      "number": 3,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 3,
+        "discriminator_lr": 0.0007311217212662966,
+        "generator_lr": 0.00032046694301349866,
+        "batch_size": 500,
+        "embedding_dim": 32,
+        "generator_decay": 3.3614205657540017e-06,
+        "discriminator_decay": 1.6933436754957852e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 500,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256,
+          256
+        ],
+        "generator_lr": 0.0003,
+        "discriminator_lr": 0.00075,
+        "embedding_dim": 32,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 3.4e-06,
+        "discriminator_decay": 2e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.6013682603300375,
+      "per_classifier": {
+        "lr": 0.6849471421923394,
+        "rf": 0.5912646344811598,
+        "xgb": 0.5278930043166136
+      },
+      "seconds": 17.52465174999088,
+      "error": null
+    },
+    {
+      "number": 4,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0005541541729808957,
+        "generator_lr": 0.00016622880911470038,
+        "batch_size": 1000,
+        "embedding_dim": 128,
+        "generator_decay": 2.3868065091353507e-06,
+        "discriminator_decay": 7.622600489597655e-06,
+        "log_frequency": true
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 1000,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00015,
+        "discriminator_lr": 0.00055,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 2.4e-06,
+        "discriminator_decay": 8e-06,
+        "log_frequency": true
+      },
+      "status": "ok",
+      "value": 0.5517575665018023,
+      "per_classifier": {
+        "lr": 0.5898224999646319,
+        "rf": 0.5752548359448844,
+        "xgb": 0.4901953635958904
+      },
+      "seconds": 16.82401695800945,
+      "error": null
+    },
+    {
+      "number": 5,
+      "params": {
+        "generator_depth": 4,
+        "discriminator_depth": 3,
+        "discriminator_lr": 0.0004870380172231563,
+        "generator_lr": 0.00014089894078204442,
+        "batch_size": 1000,
+        "embedding_dim": 32,
+        "generator_decay": 2.6413874018341603e-06,
+        "discriminator_decay": 1.215728882868462e-06,
+        "log_frequency": true
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 1000,
+        "generator_dim": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256,
+          256
+        ],
+        "generator_lr": 0.00015,
+        "discriminator_lr": 0.0005,
+        "embedding_dim": 32,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 2.6e-06,
+        "discriminator_decay": 1e-06,
+        "log_frequency": true
+      },
+      "status": "ok",
+      "value": 0.5044540413680002,
+      "per_classifier": {
+        "lr": 0.4925039949605359,
+        "rf": 0.5291600298343256,
+        "xgb": 0.4916980993091392
+      },
+      "seconds": 17.011720916983904,
+      "error": null
+    },
+    {
+      "number": 6,
+      "params": {
+        "generator_depth": 4,
+        "discriminator_depth": 3,
+        "discriminator_lr": 0.0006463659671384654,
+        "generator_lr": 9.081987486004099e-05,
+        "batch_size": 1000,
+        "embedding_dim": 128,
+        "generator_decay": 1.6507261103979784e-06,
+        "discriminator_decay": 4.6126060030628265e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 1000,
+        "generator_dim": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256,
+          256
+        ],
+        "generator_lr": 0.0001,
+        "discriminator_lr": 0.00065,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 1.7e-06,
+        "discriminator_decay": 5e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.5180826662523201,
+      "per_classifier": {
+        "lr": 0.4673858914679978,
+        "rf": 0.5787057285159751,
+        "xgb": 0.5081563787729874
+      },
+      "seconds": 18.586178916011704,
+      "error": null
+    },
+    {
+      "number": 7,
+      "params": {
+        "generator_depth": 4,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0019417399042115904,
+        "generator_lr": 0.00021460532716071633,
+        "batch_size": 100,
+        "embedding_dim": 32,
+        "generator_decay": 5.132485753181241e-06,
+        "discriminator_decay": 3.3492048465050244e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.0002,
+        "discriminator_lr": 0.00195,
+        "embedding_dim": 32,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 5.1e-06,
+        "discriminator_decay": 3e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.4002097723930838,
+      "per_classifier": {
+        "lr": 0.33779103002703853,
+        "rf": 0.4639570798718006,
+        "xgb": 0.39888120728041226
+      },
+      "seconds": 32.0811325419927,
+      "error": null
+    },
+    {
+      "number": 8,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.000807798696137532,
+        "generator_lr": 0.00036057884288044476,
+        "batch_size": 1000,
+        "embedding_dim": 128,
+        "generator_decay": 2.216484712174714e-06,
+        "discriminator_decay": 1.325394826036015e-06,
+        "log_frequency": true
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 1000,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00035,
+        "discriminator_lr": 0.0008,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 2.2e-06,
+        "discriminator_decay": 1e-06,
+        "log_frequency": true
+      },
+      "status": "ok",
+      "value": 0.5814042989042698,
+      "per_classifier": {
+        "lr": 0.5815993550748499,
+        "rf": 0.5924344353542093,
+        "xgb": 0.5701791062837501
+      },
+      "seconds": 16.898729459004244,
+      "error": null
+    },
+    {
+      "number": 9,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0008179937610610793,
+        "generator_lr": 0.0009280247155296933,
+        "batch_size": 1000,
+        "embedding_dim": 32,
+        "generator_decay": 1.2044836507406397e-06,
+        "discriminator_decay": 6.76667848461565e-06,
+        "log_frequency": true
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 1000,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00095,
+        "discriminator_lr": 0.0008,
+        "embedding_dim": 32,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 1.2e-06,
+        "discriminator_decay": 7e-06,
+        "log_frequency": true
+      },
+      "status": "ok",
+      "value": 0.5674102947895566,
+      "per_classifier": {
+        "lr": 0.5540848276091543,
+        "rf": 0.59968350343486,
+        "xgb": 0.5484625533246554
+      },
+      "seconds": 15.57255504099885,
+      "error": null
+    },
+    {
+      "number": 10,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0018908492354789328,
+        "generator_lr": 0.001139144071926369,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 3.2583587908501905e-06,
+        "discriminator_decay": 3.976996186171193e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00115,
+        "discriminator_lr": 0.0019,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 3.3e-06,
+        "discriminator_decay": 4e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.6898977506485156,
+      "per_classifier": {
+        "lr": 0.7266061538672759,
+        "rf": 0.6951925234078176,
+        "xgb": 0.6478945746704531
+      },
+      "seconds": 31.487061458989047,
+      "error": null
+    },
+    {
+      "number": 11,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0013614630922503229,
+        "generator_lr": 0.0011425486654503359,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 1.762424515523108e-06,
+        "discriminator_decay": 3.2884201969769895e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00115,
+        "discriminator_lr": 0.00135,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 1.8e-06,
+        "discriminator_decay": 3e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.6791139604740334,
+      "per_classifier": {
+        "lr": 0.715564548765446,
+        "rf": 0.6751396614372973,
+        "xgb": 0.646637671219357
+      },
+      "seconds": 31.43349404199398,
+      "error": null
+    },
+    {
+      "number": 12,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0014270848201190798,
+        "generator_lr": 0.0007408485959108541,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 1.771064645862588e-06,
+        "discriminator_decay": 1.921817686116684e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00075,
+        "discriminator_lr": 0.00145,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 1.8e-06,
+        "discriminator_decay": 2e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.7323665767863651,
+      "per_classifier": {
+        "lr": 0.7845414065463734,
+        "rf": 0.7283333875908932,
+        "xgb": 0.6842249362218285
+      },
+      "seconds": 31.36573375001899,
+      "error": null
+    },
+    {
+      "number": 13,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0013514603075599806,
+        "generator_lr": 0.001049923374179078,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 4.653232829971924e-06,
+        "discriminator_decay": 2.805865172083076e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00105,
+        "discriminator_lr": 0.00135,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 4.7e-06,
+        "discriminator_decay": 3e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.6527146394052671,
+      "per_classifier": {
+        "lr": 0.7050845507125629,
+        "rf": 0.6413185697568141,
+        "xgb": 0.611740797746424
+      },
+      "seconds": 31.48351350001758,
+      "error": null
+    },
+    {
+      "number": 14,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.001461599254728697,
+        "generator_lr": 0.0004852381138585914,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 2.610975748421616e-06,
+        "discriminator_decay": 2.601694362789349e-06,
+        "log_frequency": true
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.0005,
+        "discriminator_lr": 0.00145,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 2.6e-06,
+        "discriminator_decay": 3e-06,
+        "log_frequency": true
+      },
+      "status": "ok",
+      "value": 0.7123904394004831,
+      "per_classifier": {
+        "lr": 0.7468005206769038,
+        "rf": 0.708248414906883,
+        "xgb": 0.6821223826176622
+      },
+      "seconds": 31.648210624989588,
+      "error": null
+    },
+    {
+      "number": 15,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0011472621322928124,
+        "generator_lr": 0.0005762750183046851,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 3.16974846353355e-06,
+        "discriminator_decay": 2.7945962535293504e-06,
+        "log_frequency": true
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.0006,
+        "discriminator_lr": 0.00115,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 3.2e-06,
+        "discriminator_decay": 3e-06,
+        "log_frequency": true
+      },
+      "status": "ok",
+      "value": 0.7479264220061173,
+      "per_classifier": {
+        "lr": 0.7769679949907545,
+        "rf": 0.7450151575558387,
+        "xgb": 0.7217961134717586
+      },
+      "seconds": 31.402094541990664,
+      "error": null
+    },
+    {
+      "number": 16,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0016936860054075522,
+        "generator_lr": 0.00039205036569053397,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 1.405529504838722e-06,
+        "discriminator_decay": 2.5058014576926717e-06,
+        "log_frequency": true
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.0004,
+        "discriminator_lr": 0.0017,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 1.4e-06,
+        "discriminator_decay": 3e-06,
+        "log_frequency": true
+      },
+      "status": "ok",
+      "value": 0.660079323764183,
+      "per_classifier": {
+        "lr": 0.7431906311563857,
+        "rf": 0.6923177285254477,
+        "xgb": 0.5447296116107156
+      },
+      "seconds": 31.596377084002597,
+      "error": null
+    },
+    {
+      "number": 17,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0010584601599890524,
+        "generator_lr": 0.0009572709941510413,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 1.0843271526077757e-06,
+        "discriminator_decay": 1.228866370065359e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00095,
+        "discriminator_lr": 0.00105,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 1.1e-06,
+        "discriminator_decay": 1e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.6885515006705353,
+      "per_classifier": {
+        "lr": 0.7521963224272378,
+        "rf": 0.6907815490116831,
+        "xgb": 0.622676630572685
+      },
+      "seconds": 31.528306541003985,
+      "error": null
+    },
+    {
+      "number": 18,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0009699115498287344,
+        "generator_lr": 0.00026673248241499434,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 1.8688516437973342e-06,
+        "discriminator_decay": 2.7895301801542345e-06,
+        "log_frequency": false
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00025,
+        "discriminator_lr": 0.00095,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 1.9e-06,
+        "discriminator_decay": 3e-06,
+        "log_frequency": false
+      },
+      "status": "ok",
+      "value": 0.7381870528732842,
+      "per_classifier": {
+        "lr": 0.7713938738181718,
+        "rf": 0.740866522699963,
+        "xgb": 0.7023007621017179
+      },
+      "seconds": 31.486185375018977,
+      "error": null
+    },
+    {
+      "number": 19,
+      "params": {
+        "generator_depth": 3,
+        "discriminator_depth": 2,
+        "discriminator_lr": 0.0009629500656010755,
+        "generator_lr": 0.00027389284639944025,
+        "batch_size": 100,
+        "embedding_dim": 128,
+        "generator_decay": 3.5007750187322225e-06,
+        "discriminator_decay": 5.148354469532392e-06,
+        "log_frequency": true
+      },
+      "hparams": {
+        "epochs": 300,
+        "batch_size": 100,
+        "generator_dim": [
+          128,
+          128,
+          128
+        ],
+        "discriminator_dim": [
+          256,
+          256
+        ],
+        "generator_lr": 0.00025,
+        "discriminator_lr": 0.00095,
+        "embedding_dim": 128,
+        "pac": 10,
+        "enforce_min_max_values": true,
+        "cuda": false,
+        "verbose": false,
+        "generator_decay": 3.5e-06,
+        "discriminator_decay": 5e-06,
+        "log_frequency": true
+      },
+      "status": "ok",
+      "value": 0.769083385634457,
+      "per_classifier": {
+        "lr": 0.796868956311071,
+        "rf": 0.7573099211546894,
+        "xgb": 0.7530712794376109
+      },
+      "seconds": 31.405945374979638,
+      "error": null
+    }
+  ],
+  "env": {
+    "git_sha": "7ee40ea3f0d44742bad0ad1dcc1ac1e056f87f3f",
+    "code_sha": "12343a9a8f341a19"
+  },
+  "started_at": "2026-09-10T22:37:52.892091+00:00",
+  "finished_at": "2026-09-10T22:46:29.169331+00:00",
+  "total_seconds": 516.2753638330032
+}

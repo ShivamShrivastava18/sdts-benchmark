@@ -1,0 +1,83 @@
+{
+  "dataset": "heart_cleveland",
+  "target": "num",
+  "task": "binary",
+  "columns": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal",
+    "num"
+  ],
+  "numeric": [
+    "age",
+    "trestbps",
+    "chol",
+    "thalach",
+    "oldpeak"
+  ],
+  "categorical": [
+    "sex",
+    "cp",
+    "fbs",
+    "restecg",
+    "exang",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "levels": {
+    "sex": [
+      "0",
+      "1"
+    ],
+    "cp": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "fbs": [
+      "0",
+      "1"
+    ],
+    "restecg": [
+      "0",
+      "1",
+      "2"
+    ],
+    "exang": [
+      "0",
+      "1"
+    ],
+    "slope": [
+      "1",
+      "2",
+      "3"
+    ],
+    "ca": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "missing"
+    ],
+    "thal": [
+      "3",
+      "6",
+      "7",
+      "missing"
+    ]
+  },
+  "spec_hash": "663c799ca31e",
+  "n_rows": 303
+}

@@ -1,0 +1,78 @@
+{
+  "cell_id": "cdc_diabetes__n2000__copula__seed2__budget0",
+  "dataset": "cdc_diabetes",
+  "n_train": 2000,
+  "method": "copula",
+  "seed": 2,
+  "tuning_budget": 0,
+  "hparams": {
+    "default_distribution": "beta",
+    "enforce_min_max_values": true
+  },
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.6897087740890783,
+    "tstr_acc_mean": 0.8466374960580257,
+    "tstr_f1_mean": 0.07740548458568715,
+    "trtr_auroc_mean": 0.7939286916836963,
+    "trtr_acc_mean": 0.8551324503311258,
+    "trtr_f1_mean": 0.2605298056413099,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.96381625,
+    "ks_mean": 0.188,
+    "tvd_mean": 0.011999999999999995,
+    "corr_dist": 2.1299689100164767,
+    "dcr_median": 2.378932329220572,
+    "dcr_rate": 0.4615,
+    "nndr_median": 0.9414521172703212,
+    "mia_auc": 0.502285
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.7939381766329814,
+      "tstr_acc": 0.861498738568275,
+      "tstr_f1": 0.07405455264198181,
+      "trtr_auroc": 0.8148911136946903,
+      "trtr_acc": 0.8609665720592873,
+      "trtr_f1": 0.2702255327953652
+    },
+    "rf": {
+      "tstr_auroc": 0.7031390470704542,
+      "tstr_acc": 0.8595868811100599,
+      "tstr_f1": 0.018191841234840134,
+      "trtr_auroc": 0.7925263678215559,
+      "trtr_acc": 0.8606709239987386,
+      "trtr_f1": 0.2253150684931507
+    },
+    "xgb": {
+      "tstr_auroc": 0.5720490985637994,
+      "tstr_acc": 0.8188268684957427,
+      "tstr_f1": 0.13997005988023953,
+      "trtr_auroc": 0.7743685935348428,
+      "trtr_acc": 0.8437598549353517,
+      "trtr_f1": 0.28604881563541384
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.4783959159976803,
+    "sample_seconds": 0.06248683400917798,
+    "peak_rss_mb": 561.203125,
+    "eval_seconds": 4.599765749997459,
+    "total_seconds": 7.406232999986969
+  },
+  "env": {
+    "git_sha": "7ee40ea3f0d44742bad0ad1dcc1ac1e056f87f3f",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-10T22:34:18.875997+00:00",
+  "finished_at": "2026-09-10T22:34:26.282255+00:00",
+  "error": null
+}

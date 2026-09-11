@@ -1,0 +1,92 @@
+{
+  "cell_id": "cdc_diabetes__n5000__tvae__seed2__budget20",
+  "dataset": "cdc_diabetes",
+  "n_train": 5000,
+  "method": "tvae",
+  "seed": 2,
+  "tuning_budget": 20,
+  "hparams": {
+    "epochs": 300,
+    "batch_size": 100,
+    "compress_dims": [
+      256,
+      256
+    ],
+    "decompress_dims": [
+      256,
+      256
+    ],
+    "embedding_dim": 16,
+    "l2scale": 2.2e-05,
+    "loss_factor": 3,
+    "enforce_min_max_values": true,
+    "cuda": false,
+    "verbose": false
+  },
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.7879914962416411,
+    "tstr_acc_mean": 0.8443248712288448,
+    "tstr_f1_mean": 0.344756604904703,
+    "trtr_auroc_mean": 0.7980559404545131,
+    "trtr_acc_mean": 0.8574976348155157,
+    "trtr_f1_mean": 0.26005616582269114,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.8360166,
+    "ks_mean": 0.0760857142857143,
+    "tvd_mean": 0.029613333333333332,
+    "corr_dist": 1.373602135732306,
+    "dcr_median": 1.1596373366928856,
+    "dcr_rate": 0.5038,
+    "nndr_median": 0.8899911818645719,
+    "mia_auc": 0.50965622
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.7990397208845557,
+      "tstr_acc": 0.8453760643330179,
+      "tstr_f1": 0.35701991640029507,
+      "trtr_auroc": 0.8168690325707758,
+      "trtr_acc": 0.8619520655944497,
+      "trtr_f1": 0.26008873864356646
+    },
+    "rf": {
+      "tstr_auroc": 0.7840723218922278,
+      "tstr_acc": 0.846893724377168,
+      "tstr_f1": 0.3355004277159966,
+      "trtr_auroc": 0.7923080136739936,
+      "trtr_acc": 0.8591532639545885,
+      "trtr_f1": 0.229126213592233
+    },
+    "xgb": {
+      "tstr_auroc": 0.78086244594814,
+      "tstr_acc": 0.8407048249763481,
+      "tstr_f1": 0.34174947059781724,
+      "trtr_auroc": 0.7849907751187701,
+      "trtr_acc": 0.8513875748975087,
+      "trtr_f1": 0.29095354523227385
+    }
+  },
+  "cost": {
+    "fit_seconds": 21.92673683402245,
+    "sample_seconds": 0.04827641698648222,
+    "peak_rss_mb": 649.0,
+    "eval_seconds": 5.424561125022592,
+    "total_seconds": 30.217515958007425
+  },
+  "env": {
+    "git_sha": "406ab7bfa35bd53ad3b798c7abb2df70109287cd",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {},
+  "started_at": "2026-09-11T00:09:07.755505+00:00",
+  "finished_at": "2026-09-11T00:09:37.973144+00:00",
+  "error": null
+}

@@ -1,0 +1,77 @@
+{
+  "cell_id": "adult__n2000__real_subsample__seed0__budget0",
+  "dataset": "adult",
+  "n_train": 2000,
+  "method": "real_subsample",
+  "seed": 0,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.8977416977913512,
+    "tstr_acc_mean": 0.8447719944725933,
+    "tstr_f1_mean": 0.6496030702436815,
+    "trtr_auroc_mean": 0.8973853330513197,
+    "trtr_acc_mean": 0.8464097446133375,
+    "trtr_f1_mean": 0.6532535379598575,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.521311375,
+    "ks_mean": 0.01900000000000003,
+    "tvd_mean": 0.02177777777777777,
+    "corr_dist": 0.4259209189445664,
+    "dcr_median": 0.0,
+    "dcr_rate": 1.0,
+    "nndr_median": 0.0,
+    "mia_auc": 1.0
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.8986333082272343,
+      "tstr_acc": 0.8436972209427299,
+      "tstr_f1": 0.6415492957746479,
+      "trtr_auroc": 0.8986333082272343,
+      "trtr_acc": 0.8436972209427299,
+      "trtr_f1": 0.6415492957746479
+    },
+    "rf": {
+      "tstr_auroc": 0.8966380182002022,
+      "tstr_acc": 0.8418547520343928,
+      "tstr_f1": 0.6475017111567419,
+      "trtr_auroc": 0.8955689239801077,
+      "trtr_acc": 0.8467680024566252,
+      "trtr_f1": 0.6584531143052703
+    },
+    "xgb": {
+      "tstr_auroc": 0.8979537669466169,
+      "tstr_acc": 0.8487640104406572,
+      "tstr_f1": 0.6597582037996546,
+      "trtr_auroc": 0.8979537669466169,
+      "trtr_acc": 0.8487640104406572,
+      "trtr_f1": 0.6597582037996546
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.0012051250087097287,
+    "sample_seconds": 0.00514420896070078,
+    "peak_rss_mb": 401.953125,
+    "eval_seconds": 4.18482370802667,
+    "total_seconds": 6.0202384580043145
+  },
+  "env": {
+    "git_sha": "7cf8f6332a27c0c0f85da8031aa4cbb54eb3b099",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {
+    "with_replacement": false
+  },
+  "started_at": "2026-09-08T07:03:03.233907+00:00",
+  "finished_at": "2026-09-08T07:03:09.254127+00:00",
+  "error": null
+}

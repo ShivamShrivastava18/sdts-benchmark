@@ -1,0 +1,77 @@
+{
+  "cell_id": "bank__n1000__real_subsample__seed1__budget0",
+  "dataset": "bank",
+  "n_train": 1000,
+  "method": "real_subsample",
+  "seed": 1,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.7215458726763595,
+    "tstr_acc_mean": 0.8869475469055255,
+    "tstr_f1_mean": 0.270688685578374,
+    "trtr_auroc_mean": 0.7224294015361981,
+    "trtr_acc_mean": 0.8876479044564857,
+    "trtr_f1_mean": 0.275172331217205,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.510605,
+    "ks_mean": 0.023666666666666666,
+    "tvd_mean": 0.029700000000000004,
+    "corr_dist": 0.6342195412929945,
+    "dcr_median": 0.0,
+    "dcr_rate": 1.0,
+    "nndr_median": 0.0,
+    "mia_auc": 1.0
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.7246377600723475,
+      "tstr_acc": 0.8915183014486343,
+      "tstr_f1": 0.26736370425690814,
+      "trtr_auroc": 0.7246377600723475,
+      "trtr_acc": 0.8915183014486343,
+      "trtr_f1": 0.26736370425690814
+    },
+    "rf": {
+      "tstr_auroc": 0.7454540827378365,
+      "tstr_acc": 0.8897489771093664,
+      "tstr_f1": 0.26637233259749815,
+      "trtr_auroc": 0.7481046693173519,
+      "trtr_acc": 0.891850049762247,
+      "trtr_f1": 0.27982326951399117
+    },
+    "xgb": {
+      "tstr_auroc": 0.6945457752188946,
+      "tstr_acc": 0.8795753621585757,
+      "tstr_f1": 0.2783300198807157,
+      "trtr_auroc": 0.6945457752188946,
+      "trtr_acc": 0.8795753621585757,
+      "trtr_f1": 0.2783300198807157
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.0003529170007823268,
+    "sample_seconds": 0.004260790999978781,
+    "peak_rss_mb": 409.953125,
+    "eval_seconds": 4.577427958000044,
+    "total_seconds": 6.387357292000161
+  },
+  "env": {
+    "git_sha": "a2984b45de01232c00969f4204da567d50589ba6",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {
+    "with_replacement": false
+  },
+  "started_at": "2026-09-08T18:27:10.682870+00:00",
+  "finished_at": "2026-09-08T18:27:17.070243+00:00",
+  "error": null
+}

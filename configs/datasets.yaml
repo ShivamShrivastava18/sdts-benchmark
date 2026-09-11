@@ -1,0 +1,372 @@
+# Dataset registry. Read by sdts.data.loaders, sdts.data.schema and sdts.doctor.
+#
+# Per dataset:
+#   arm:          ladder (subsampled down the size ladder) | small (natively small, never subsampled)
+#   license:      licence of the raw data as stated by the host
+#   sources:      tried in order. Each has kind (url|kaggle|manual), filename (name in
+#                 data/cache/<id>/), sha256 of that file, and a read spec (pandas kwargs,
+#                 plus format: csv|xls and members: [zip member chain]).
+#   rename:       raw -> canonical column names (applied before anything else)
+#   drop_columns: removed after renaming (identifiers, leakage, constants, high-cardinality codes)
+#   dedupe_by:    keep the first row per key, ordered by `order`
+#   target / positive: target column and the raw values mapped to 1; everything else is 0
+#   categorical / numeric: type overrides on top of the inference rule in sdts.data.schema
+#   missing:      na_tokens read as missing; zero_as_missing columns have 0 -> missing
+#   notes:        every non-obvious decision, so a reader can audit it
+#
+# Fallback sources for the two Kaggle datasets are `manual`: the same file with the same
+# checksum, obtained by hand from the Kaggle page. No byte-identical public mirror exists.
+
+datasets:
+
+  # ------------------------------------------------------------------ ladder arm
+  adult:
+    name: Adult census income (UCI 2)
+    arm: ladder
+    license: CC BY 4.0
+    sources:
+      - kind: url
+        url: https://archive.ics.uci.edu/static/public/2/adult.zip
+        filename: adult.zip
+        sha256: 7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb
+        read: &adult_read
+          format: csv
+          members: [adult.data]
+          header: null
+          names: [age, workclass, fnlwgt, education, education_num, marital_status, occupation,
+                  relationship, race, sex, capital_gain, capital_loss, hours_per_week,
+                  native_country, income]
+          na_values: ["?"]
+          skipinitialspace: true
+      - kind: url
+        url: https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data
+        filename: adult.data
+        sha256: 5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d
+        read:
+          <<: *adult_read
+          members: []
+    target: income
+    positive: [">50K"]
+    task: binary
+    missing: {na_tokens: ["?"]}
+    notes: >
+      Training file only (32,561 rows); adult.test is not merged. education_num is kept
+      numeric (ordinal) alongside the categorical education column, as in the original.
+
+  bank:
+    name: Bank marketing, full (UCI 222)
+    arm: ladder
+    license: CC BY 4.0
+    sources:
+      - kind: url
+        url: https://archive.ics.uci.edu/static/public/222/bank+marketing.zip
+        filename: bank_marketing.zip
+        sha256: e0bf5f5de5b846e2f18e9d90606637267d46dfa260e0f17bb12e605db5efbeb4
+        read: {format: csv, members: [bank.zip, bank-full.csv], sep: ";"}
+      - kind: url
+        url: https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank.zip
+        filename: bank.zip
+        sha256: 99d7e8eb12401ed278b793984423915411ea8df099e1795f9fefe254f513fe5e
+        read: {format: csv, members: [bank-full.csv], sep: ";"}
+    target: y
+    positive: ["yes"]
+    task: binary
+    drop_columns: [duration]
+    notes: >
+      `duration` (call length) is only known after the outcome and is dropped, as the
+      dataset authors recommend for realistic prediction. `day` (day of month) stays numeric.
+
+  credit_default:
+    name: Default of credit card clients (UCI 350, Taiwan 2005)
+    arm: ladder
+    license: CC BY 4.0
+    sources:
+      - kind: url
+        url: https://www.openml.org/data/get_csv/21854402/default-of-credit-card-clients.arff
+        filename: default-of-credit-card-clients.csv
+        sha256: 6802ce5478d566d44d3adb81520ed24f0bbb7a1c64c67235ca29f4b3b5956225
+        read: &credit_read
+          format: csv
+          header: null
+          skiprows: 1
+          names: [id, limit_bal, sex, education, marriage, age, pay_0, pay_2, pay_3, pay_4, pay_5,
+                  pay_6, bill_amt1, bill_amt2, bill_amt3, bill_amt4, bill_amt5, bill_amt6,
+                  pay_amt1, pay_amt2, pay_amt3, pay_amt4, pay_amt5, pay_amt6, default]
+      - kind: url
+        url: https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip
+        filename: default_of_credit_card_clients.zip
+        sha256: 56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602
+        read:
+          format: xls
+          members: ["default of credit card clients.xls"]
+          header: null
+          skiprows: 2
+          names: [id, limit_bal, sex, education, marriage, age, pay_0, pay_2, pay_3, pay_4, pay_5,
+                  pay_6, bill_amt1, bill_amt2, bill_amt3, bill_amt4, bill_amt5, bill_amt6,
+                  pay_amt1, pay_amt2, pay_amt3, pay_amt4, pay_amt5, pay_amt6, default]
+    target: default
+    positive: [1]
+    task: binary
+    drop_columns: [id]
+    categorical: [sex, education, marriage]
+    notes: >
+      Primary is the OpenML CSV export (CC0 on OpenML) of the same 30,000 rows because the
+      UCI copy is an .xls; the UCI xls is the fallback and needs xlrd. Repayment-status
+      columns pay_0..pay_6 are ordinal integers and stay numeric.
+
+  diabetes130:
+    name: Diabetes 130-US hospitals 1999-2008 (UCI 296)
+    arm: ladder
+    license: CC BY 4.0
+    sources:
+      - kind: url
+        url: https://archive.ics.uci.edu/static/public/296/diabetes+130-us+hospitals+for+years+1999-2008.zip
+        filename: diabetes130.zip
+        sha256: f82ac129da2ddd2299391ff6fbae3a6a58b3edcf59ac9d7bd480c00fe453112a
+        read: {format: csv, members: [diabetic_data.csv], na_values: ["?"], low_memory: false}
+      - kind: url
+        url: https://archive.ics.uci.edu/ml/machine-learning-databases/00296/dataset_diabetes.zip
+        filename: dataset_diabetes.zip
+        sha256: 66d9820c3bd5fd2abf7957bda2d9714b2de1e7bba1ac1f1ff8fa85e83c22cb33
+        read: {format: csv, members: [dataset_diabetes/diabetic_data.csv], na_values: ["?"], low_memory: false}
+    target: readmitted
+    positive: ["<30", ">30"]
+    task: binary
+    dedupe_by: {key: patient_nbr, order: encounter_id}
+    drop_columns: [encounter_id, patient_nbr, weight, diag_1, diag_2, diag_3, examide, citoglipton]
+    categorical: [admission_type_id, discharge_disposition_id, admission_source_id]
+    missing: {na_tokens: ["?"]}
+    notes: >
+      One row per patient (first encounter by encounter_id, 71,518 rows) so that the same
+      patient cannot sit in both train and test. Target is any readmission (<30 or >30 days)
+      versus none, 40% positive. Dropped: identifiers; weight (97% missing); diag_1..3
+      (700+ ICD-9 levels each); examide and citoglipton (constant). The literal string
+      "None" in max_glu_serum / A1Cresult (test not performed) is read as missing and
+      becomes the `missing` level. The three *_id columns are nominal codes.
+
+  support2:
+    name: SUPPORT2, seriously ill hospitalised adults (UCI 880)
+    arm: ladder
+    license: CC BY 4.0
+    sources:
+      - kind: url
+        url: https://archive.ics.uci.edu/static/public/880/data.csv
+        filename: support2.csv
+        sha256: 9da794bbd5c3a6a816e677cc17535e58c122d9ef4cbefd404489330a9f9cd2de
+        read: {format: csv}
+      - kind: url
+        url: https://hbiostat.org/data/repo/support2csv.zip
+        filename: support2csv.zip
+        sha256: 8ed43980742a18e1847a8dfc5530bc4b30564ad9e4ad1b1b50bbc5d29d8c86fe
+        read: {format: csv, members: [support2.csv]}
+    target: hospdead
+    positive: [1]
+    task: binary
+    drop_columns: [id, death, d.time, sfdm2, slos, charges, totcst, totmcst]
+    notes: >
+      Target is in-hospital death (26% positive). Dropped as outcome leakage: death and
+      d.time (follow-up outcome), sfdm2 (2-month functional status), slos, charges, totcst,
+      totmcst (known only once the stay ends). Physiology, disease class, comorbidity and
+      the physician/model prognoses at study entry are kept. Heavy numeric missingness
+      (adlp 62%, urine 53%, glucose 49%) is median-imputed per the policy.
+
+  cardio:
+    name: Cardiovascular disease dataset (Kaggle, sulianova)
+    arm: ladder
+    license: unknown (Kaggle lists no licence)
+    sources:
+      - kind: kaggle
+        dataset: sulianova/cardiovascular-disease-dataset
+        file: cardio_train.csv
+        filename: cardio_train.csv
+        sha256: 21a705d23381b0dfd6a6416da701b490744f1fc3b47e9ff3db3968c420ffa10c
+        read: {format: csv, sep: ";"}
+      - kind: manual
+        url: https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset
+        filename: cardio_train.csv
+        sha256: 21a705d23381b0dfd6a6416da701b490744f1fc3b47e9ff3db3968c420ffa10c
+        read: {format: csv, sep: ";"}
+    target: cardio
+    positive: [1]
+    task: binary
+    drop_columns: [id]
+    categorical: [gender, cholesterol, gluc]
+    notes: >
+      70,000 rows, balanced target. age is in days and is left as is. Blood pressure
+      columns contain implausible values (negative, >1000); they are kept because every
+      method sees the same raw data and robustness to dirty columns is part of the question.
+      Licence decision 2026-09-07 (author): kept; this study is educational use.
+
+  stroke:
+    name: Stroke prediction dataset (Kaggle, fedesoriano)
+    arm: ladder
+    license: "copyright-authors; page says 'confidential source, use only for educational purposes'"
+    sources:
+      - kind: kaggle
+        dataset: fedesoriano/stroke-prediction-dataset
+        file: healthcare-dataset-stroke-data.csv
+        filename: healthcare-dataset-stroke-data.csv
+        sha256: 644d473b05d2797006bd94865e4f8bb057f0c721617911613c82c8fcfc707420
+        read: {format: csv}
+      - kind: manual
+        url: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
+        filename: healthcare-dataset-stroke-data.csv
+        sha256: 644d473b05d2797006bd94865e4f8bb057f0c721617911613c82c8fcfc707420
+        read: {format: csv}
+    target: stroke
+    positive: [1]
+    task: binary
+    drop_columns: [id]
+    notes: >
+      5,110 rows, 4.9% positive: the most imbalanced set in the study. bmi "N/A" is read
+      as missing and median-imputed. smoking_status "Unknown" is a legitimate level.
+      Max rung is 2000 (training split has 3,066 rows). Licence decision 2026-09-07 (author):
+      kept; this study is educational use, which the page's terms permit.
+
+  cdc_diabetes:
+    name: CDC Diabetes Health Indicators, BRFSS 2015 (UCI 891)
+    arm: ladder
+    license: CC0 1.0
+    sources:
+      - kind: url
+        url: https://archive.ics.uci.edu/static/public/891/data.csv
+        filename: cdc_diabetes_health_indicators.csv
+        sha256: 9f71fda9d4ae5f4878c99b9233b6a16accfa9a17c194116a6b78100540934964
+        read: {format: csv}
+      - kind: kaggle
+        dataset: alexteboul/diabetes-health-indicators-dataset
+        file: diabetes_binary_health_indicators_BRFSS2015.csv
+        filename: diabetes_binary_health_indicators_BRFSS2015.csv
+        sha256: 19f367e3e3350768f0c144c5d73ee5b355f67a57eaaa86ca7bd8aec594d8b1d0
+        read: {format: csv}
+    target: Diabetes_binary
+    positive: [1]
+    task: binary
+    drop_columns: [ID]
+    notes: >
+      The eighth ladder dataset, chosen as the clinical set above 20k rows: 253,680 survey
+      respondents, 21 health indicators, 13.9% diabetic or prediabetic. Chosen for its size,
+      CC0 licence and clean binary coding. Binary indicators become categorical by the
+      inference rule; GenHlth, Age, Education and Income are ordinal codes and stay numeric.
+
+  # ------------------------------------------------------------------ small arm (true size)
+  pima:
+    name: Pima Indians diabetes (NIDDK)
+    arm: small
+    license: public domain (US NIH NIDDK); CC0 on OpenML
+    sources:
+      - kind: url
+        url: https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.csv
+        filename: pima-indians-diabetes.csv
+        sha256: 6bfe5d0f379d17a0e0819b996407e3c09bf80febd4287f2ed212190dfff154af
+        read: &pima_read
+          format: csv
+          header: null
+          names: [pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi,
+                  diabetes_pedigree, age, outcome]
+      - kind: url
+        url: https://www.openml.org/data/get_csv/37/dataset_37_diabetes.arff
+        filename: dataset_37_diabetes.csv
+        sha256: de2e5ee67a97714d8cabfad8abe892375fc621feed7e9bf76c11a4ee43f403f6
+        read:
+          <<: *pima_read
+          skiprows: 1
+    target: outcome
+    positive: [1, tested_positive]
+    task: binary
+    missing:
+      zero_as_missing: [glucose, blood_pressure, skin_thickness, insulin, bmi]
+    notes: >
+      768 rows, 35% positive. UCI no longer hosts the file; primary is the widely used
+      mirror by Jason Brownlee, fallback is OpenML dataset 37 (same rows, text target).
+      Zeros in the five physiological columns are impossible and are treated as missing.
+
+  breast_cancer_wisconsin:
+    name: Breast cancer Wisconsin diagnostic, WDBC (UCI 17)
+    arm: small
+    license: CC BY 4.0
+    sources:
+      - kind: url
+        url: https://archive.ics.uci.edu/static/public/17/breast+cancer+wisconsin+diagnostic.zip
+        filename: wdbc.zip
+        sha256: bc154869ef13f753f9e2b5a17e248cfe1ba4b6721db7c4da9f4880e40b05d3af
+        read: &wdbc_read
+          format: csv
+          members: [wdbc.data]
+          header: null
+          names: [id, diagnosis,
+                  radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean,
+                  compactness_mean, concavity_mean, concave_points_mean, symmetry_mean,
+                  fractal_dimension_mean,
+                  radius_se, texture_se, perimeter_se, area_se, smoothness_se, compactness_se,
+                  concavity_se, concave_points_se, symmetry_se, fractal_dimension_se,
+                  radius_worst, texture_worst, perimeter_worst, area_worst, smoothness_worst,
+                  compactness_worst, concavity_worst, concave_points_worst, symmetry_worst,
+                  fractal_dimension_worst]
+      - kind: url
+        url: https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data
+        filename: wdbc.data
+        sha256: d606af411f3e5be8a317a5a8b652b425aaf0ff38ca683d5327ffff94c3695f4a
+        read:
+          <<: *wdbc_read
+          members: []
+    target: diagnosis
+    positive: [M]
+    task: binary
+    drop_columns: [id]
+    notes: 569 rows, 37% malignant, 30 continuous features, no missing values.
+
+  heart_cleveland:
+    name: Heart disease, Cleveland processed (UCI 45)
+    arm: small
+    license: CC BY 4.0
+    sources:
+      - kind: url
+        url: https://archive.ics.uci.edu/static/public/45/heart+disease.zip
+        filename: heart_disease.zip
+        sha256: b17cd273da9ce1caa4710fce80227ea454d4dbf9fcbc8e6a9121672751563adc
+        read: &cleve_read
+          format: csv
+          members: [processed.cleveland.data]
+          header: null
+          names: [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope,
+                  ca, thal, num]
+          na_values: ["?"]
+      - kind: url
+        url: https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data
+        filename: processed.cleveland.data
+        sha256: a74b7efa387bc9d108d7d0115d831fe9b414b29ae7124f331b622b4efa0427c8
+        read:
+          <<: *cleve_read
+          members: []
+    target: num
+    positive: [1, 2, 3, 4]
+    task: binary
+    categorical: [cp, restecg, slope, ca, thal]
+    missing: {na_tokens: ["?"]}
+    notes: >
+      303 rows. Target is presence of disease (num > 0), 46% positive. ca and thal carry
+      six "?" values in total, which become the `missing` level.
+
+  heart_failure:
+    name: Heart failure clinical records (UCI 519)
+    arm: small
+    license: CC BY 4.0
+    sources:
+      - kind: url
+        url: https://archive.ics.uci.edu/static/public/519/heart+failure+clinical+records.zip
+        filename: heart_failure_clinical_records.zip
+        sha256: f0739603e2f9573ffc7d509573cbf9bcb4cc889e4eea0f35a75bec68fc9163d7
+        read: {format: csv, members: [heart_failure_clinical_records_dataset.csv]}
+      - kind: url
+        url: https://archive.ics.uci.edu/ml/machine-learning-databases/00519/heart_failure_clinical_records_dataset.csv
+        filename: heart_failure_clinical_records_dataset.csv
+        sha256: 9c73cea7468ff5d517801ec050fe9993da5912fce4b56f296f8df3b38dd75912
+        read: {format: csv}
+    target: DEATH_EVENT
+    positive: [1]
+    task: binary
+    drop_columns: [time]
+    notes: >
+      299 rows, 32% positive. `time` (follow-up days) is censoring information that
+      determines the label and is dropped, following Chicco & Jurman (2020).

@@ -1,0 +1,65 @@
+# Method registry: implementation provenance and Stage 0 defaults.
+# The code is the source of truth for default hyper-parameters
+# (Method.default_hparams); this file records provenance and status.
+
+methods:
+  marginals:
+    role: baseline (floor)
+    impl: sdts.methods.marginals, independent empirical marginals
+    active: true
+    hyperparameters: none
+  real_subsample:
+    role: baseline (ceiling)
+    impl: sdts.methods.real_subsample, without-replacement draw of fitted rows; with_replacement recorded if n exceeds fitted rows
+    active: true
+    hyperparameters: none
+  copula:
+    role: baseline
+    impl: sdv==1.38.3 GaussianCopulaSynthesizer, default_distribution=beta
+    active: true
+  smote:
+    role: baseline
+    impl: sdts.methods.smote (own implementation, SMOTE-NC semantics), target-conditioned, k=5; variant definition per arXiv 2406.12945
+    active: true
+  ucsmote:
+    role: baseline
+    impl: sdts.methods.smote, unconditional with dummy zero class, target treated as a categorical feature; per arXiv 2406.12945
+    active: true
+  ctgan:
+    role: deep
+    impl: sdv==1.38.3 CTGANSynthesizer (ctgan==0.12.1), 300 epochs, batch 500, 256x256 nets, pac 10
+    active: true
+  tvae:
+    role: deep
+    impl: sdv==1.38.3 TVAESynthesizer (ctgan==0.12.1), 300 epochs, batch 500, 128x128 nets
+    active: true
+  tabddpm:
+    role: deep
+    impl: vendored yandex-research/tab-ddpm@b476257 (third_party/tab_ddpm, MIT); wrapper in sdts.methods.tabddpm
+    tabddpm_impl: vendored-official
+    active: true
+    defaults: upstream train() defaults (lr 2e-3, wd 1e-4, batch 1024, T=1000 cosine, MLP [256,256]) with steps=10000;
+      upstream's 1000 is a smoke value that leaves the model untrained (TSTR 0.30 vs 0.89 at 10k, adult n=5000, 2026-09-07)
+    device: cuda if available else cpu; mps supported but non-deterministic, not used
+  tabsyn:
+    role: deep (stretch)
+    impl: stub, registered and disabled
+    active: false
+
+# The registry has eight active entries but seven competing methods: smote and
+# ucsmote are two variants of one family, and real_subsample is a reference
+# ceiling rather than a competitor. grid.yaml lists which run.
+
+devices:
+  torch_cpu_threads: 1 in any process that also evaluates (duplicate-OpenMP guard, sdts.methods.base.configure_torch_threads);
+    the fit/sample worker never evaluates and uses SDTS_TORCH_THREADS (default 1; more threads measured no faster; recorded in env.torch_threads)
+  sdv_models: cuda if available else cpu (ctgan does not use MPS)
+  tabddpm: cuda if available else cpu (MPS avoided for determinism)
+
+# Downstream classifiers for TSTR/TRTR (Phase 3). Fixed constants, never tuned.
+downstream_classifiers:
+  lr:  {class: sklearn.linear_model.LogisticRegression, C: 1.0, max_iter: 2000, solver: lbfgs}
+  rf:  {class: sklearn.ensemble.RandomForestClassifier, n_estimators: 200, max_depth: null, min_samples_leaf: 1, n_jobs: 1}
+  xgb: {class: xgboost.XGBClassifier, n_estimators: 200, max_depth: 6, learning_rate: 0.1, subsample: 1.0, colsample_bytree: 1.0, n_jobs: 1}
+  preprocessing: standardise numeric, one-hot categorical (fit on the training frame of the classifier)
+  seed: the cell seed

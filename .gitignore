@@ -1,0 +1,18 @@
+# virtualenv and python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# run artefacts: logs, manifests, ledgers
+runs/
+
+# raw and parquet dataset cache, downloaded on demand and checksummed
+data/cache/
+
+# editors / OS
+.DS_Store
+.idea/
+.vscode/

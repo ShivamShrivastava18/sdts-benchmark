@@ -1,0 +1,30 @@
+{
+  "dataset": "pima",
+  "target": "outcome",
+  "task": "binary",
+  "columns": [
+    "pregnancies",
+    "glucose",
+    "blood_pressure",
+    "skin_thickness",
+    "insulin",
+    "bmi",
+    "diabetes_pedigree",
+    "age",
+    "outcome"
+  ],
+  "numeric": [
+    "pregnancies",
+    "glucose",
+    "blood_pressure",
+    "skin_thickness",
+    "insulin",
+    "bmi",
+    "diabetes_pedigree",
+    "age"
+  ],
+  "categorical": [],
+  "levels": {},
+  "spec_hash": "e6d4bb64a6f8",
+  "n_rows": 768
+}

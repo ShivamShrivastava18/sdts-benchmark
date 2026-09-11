@@ -1,0 +1,77 @@
+{
+  "cell_id": "diabetes130__n200__real_subsample__seed4__budget0",
+  "dataset": "diabetes130",
+  "n_train": 200,
+  "method": "real_subsample",
+  "seed": 4,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.5504894559647728,
+    "tstr_acc_mean": 0.5691414988814317,
+    "tstr_f1_mean": 0.3708753889159229,
+    "trtr_auroc_mean": 0.5503885076868765,
+    "trtr_acc_mean": 0.569024981357196,
+    "trtr_f1_mean": 0.3739359191466555,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.5107750000000001,
+    "ks_mean": 0.042500000000000024,
+    "tvd_mean": 0.03058823529411765,
+    "corr_dist": 3.4683727817754697,
+    "dcr_median": 0.0,
+    "dcr_rate": 1.0,
+    "nndr_median": 0.0,
+    "mia_auc": 1.0
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.5453617270942168,
+      "tstr_acc": 0.5625,
+      "tstr_f1": 0.40558510638297873,
+      "trtr_auroc": 0.5453617270942168,
+      "trtr_acc": 0.5625,
+      "trtr_f1": 0.40558510638297873
+    },
+    "rf": {
+      "tstr_auroc": 0.5579752342897193,
+      "tstr_acc": 0.585081096196868,
+      "tstr_f1": 0.2972172883362937,
+      "trtr_auroc": 0.5576723894560307,
+      "trtr_acc": 0.584731543624161,
+      "trtr_f1": 0.30639887902849133
+    },
+    "xgb": {
+      "tstr_auroc": 0.5481314065103823,
+      "tstr_acc": 0.5598434004474273,
+      "tstr_f1": 0.40982377202849646,
+      "trtr_auroc": 0.5481314065103823,
+      "trtr_acc": 0.5598434004474273,
+      "trtr_f1": 0.40982377202849646
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.0004012499994132668,
+    "sample_seconds": 0.009171166006126441,
+    "peak_rss_mb": 446.15625,
+    "eval_seconds": 3.34762887499528,
+    "total_seconds": 5.532173167004657
+  },
+  "env": {
+    "git_sha": "30e30c4c09aa4630f5f23305f9ad0ff0542b0a65",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {
+    "with_replacement": false
+  },
+  "started_at": "2026-09-09T08:35:08.103223+00:00",
+  "finished_at": "2026-09-09T08:35:13.635442+00:00",
+  "error": null
+}

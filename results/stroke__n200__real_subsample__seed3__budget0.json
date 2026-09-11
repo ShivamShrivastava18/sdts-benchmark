@@ -1,0 +1,77 @@
+{
+  "cell_id": "stroke__n200__real_subsample__seed3__budget0",
+  "dataset": "stroke",
+  "n_train": 200,
+  "method": "real_subsample",
+  "seed": 3,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.7243689986282579,
+    "tstr_acc_mean": 0.946836268754077,
+    "tstr_f1_mean": 0.012345679012345678,
+    "trtr_auroc_mean": 0.7244513031550067,
+    "trtr_acc_mean": 0.946836268754077,
+    "trtr_f1_mean": 0.012345679012345678,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.50275,
+    "ks_mean": 0.09499999999999997,
+    "tvd_mean": 0.034375,
+    "corr_dist": 1.1013513497180583,
+    "dcr_median": 0.0,
+    "dcr_rate": 1.0,
+    "nndr_median": 0.0,
+    "mia_auc": 1.0
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.730432098765432,
+      "tstr_acc": 0.949119373776908,
+      "tstr_f1": 0.037037037037037035,
+      "trtr_auroc": 0.730432098765432,
+      "trtr_acc": 0.949119373776908,
+      "trtr_f1": 0.037037037037037035
+    },
+    "rf": {
+      "tstr_auroc": 0.7286008230452675,
+      "tstr_acc": 0.949119373776908,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.7288477366255144,
+      "trtr_acc": 0.949119373776908,
+      "trtr_f1": 0.0
+    },
+    "xgb": {
+      "tstr_auroc": 0.7140740740740741,
+      "tstr_acc": 0.9422700587084148,
+      "tstr_f1": 0.0,
+      "trtr_auroc": 0.7140740740740741,
+      "trtr_acc": 0.9422700587084148,
+      "trtr_f1": 0.0
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.0002859999949578196,
+    "sample_seconds": 0.002367917011724785,
+    "peak_rss_mb": 385.9375,
+    "eval_seconds": 1.1623240830085706,
+    "total_seconds": 2.925572916981764
+  },
+  "env": {
+    "git_sha": "3fa59da30029a43a91e23aa749ff576e6fc610c5",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {
+    "with_replacement": false
+  },
+  "started_at": "2026-09-10T18:55:40.379403+00:00",
+  "finished_at": "2026-09-10T18:55:43.304969+00:00",
+  "error": null
+}

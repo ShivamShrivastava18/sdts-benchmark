@@ -1,0 +1,77 @@
+{
+  "cell_id": "credit_default__n2000__real_subsample__seed1__budget0",
+  "dataset": "credit_default",
+  "n_train": 2000,
+  "method": "real_subsample",
+  "seed": 1,
+  "tuning_budget": 0,
+  "hparams": {},
+  "status": "ok",
+  "metrics": {
+    "tstr_auroc_mean": 0.7384193526139812,
+    "tstr_acc_mean": 0.8088888888888889,
+    "tstr_f1_mean": 0.45497685978126784,
+    "trtr_auroc_mean": 0.7374704305111165,
+    "trtr_acc_mean": 0.8070555555555555,
+    "trtr_f1_mean": 0.4495435551838221,
+    "majority_auroc": 0.5,
+    "c2st_auc": 0.5068675,
+    "ks_mean": 0.020725,
+    "tvd_mean": 0.010874999999999978,
+    "corr_dist": 2.0413320397817327,
+    "dcr_median": 0.0,
+    "dcr_rate": 1.0,
+    "nndr_median": 0.0,
+    "mia_auc": 1.0
+  },
+  "per_classifier": {
+    "lr": {
+      "tstr_auroc": 0.7155764705806464,
+      "tstr_acc": 0.809,
+      "tstr_f1": 0.4182741116751269,
+      "trtr_auroc": 0.7155764705806464,
+      "trtr_acc": 0.809,
+      "trtr_f1": 0.4182741116751269
+    },
+    "rf": {
+      "tstr_auroc": 0.7572431439665827,
+      "tstr_acc": 0.8165,
+      "tstr_f1": 0.4813942534149788,
+      "trtr_auroc": 0.7543963776579884,
+      "trtr_acc": 0.811,
+      "trtr_f1": 0.4650943396226415
+    },
+    "xgb": {
+      "tstr_auroc": 0.7424384432947146,
+      "tstr_acc": 0.8011666666666667,
+      "tstr_f1": 0.4652622142536979,
+      "trtr_auroc": 0.7424384432947146,
+      "trtr_acc": 0.8011666666666667,
+      "trtr_f1": 0.4652622142536979
+    }
+  },
+  "cost": {
+    "fit_seconds": 0.00049458300054539,
+    "sample_seconds": 0.0047416660017916,
+    "peak_rss_mb": 425.671875,
+    "eval_seconds": 11.446274542002357,
+    "total_seconds": 14.609034792003513
+  },
+  "env": {
+    "git_sha": "94f9224d58c34f22473e0b295d301ff18b36d2cb",
+    "code_sha": "12343a9a8f341a19",
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sdv": "1.38.3",
+    "tabddpm_impl": "vendored-official",
+    "gpu": "mps: arm",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "torch_threads": 1
+  },
+  "extra": {
+    "with_replacement": false
+  },
+  "started_at": "2026-09-09T04:42:34.088219+00:00",
+  "finished_at": "2026-09-09T04:42:48.697258+00:00",
+  "error": null
+}
